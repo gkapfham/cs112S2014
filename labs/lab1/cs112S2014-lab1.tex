@@ -51,8 +51,6 @@ this individual also is able to successfully complete each of the steps outlined
     all of the files that you will need to use for this laboratory assignment. Please resolve any problems that your
     encountered by first reviewing the Bitbucket documentation and then discussing the matter with your partner.
 
-  % \newpage 
-  
   \item Using your terminal window, you should browse the files that are in this Git repository. Remember,
     the {\tt cd} command allows you to change into a directory.  In particular, please look in the {\tt labs/lab1/src/}
     directory and use Vim to study the two Java programs that you find.
@@ -61,10 +59,18 @@ this individual also is able to successfully complete each of the steps outlined
 
 \section*{Creating a New Repository}
 
-Now that you have learned how to clone an existing Git repository, you and your team members are responsible for
-creating a new repository that contains the source code of a presentation explaining the use of Git. Using screen shots
-and easy-to-understand points (and the presentation system in the cloned repository), your presentation should explain
-how to use the following Git commands. 
+Now that you have learned how to clone an existing Git repository, you should create a new repository in the {\tt
+cs112S2014/} directory that you previously created.  First, create a new directory called {\tt cs112S2014-<your user
+name>}. Then, change into this directory and type the command {\tt git init .}.  At this point, you should go into
+the {\tt cs580s2014-share} repository and use the {\tt cp -r} command to copy the entire {\tt labs} directory from the
+{\tt cs580s2014-share} repository to the {\tt cs112S2014-<your user name>}.  Once the files are in your own Git
+repository, please use the {\tt git add} and {\tt git commit} commands to add them correctly. If you do not know how to
+use the {\tt git add} and {\tt git commit} commands, please learn more about them by searching on the Internet, talking
+about them with your partner, and discussing them with the course instructor.
+
+Next, you should use the Bitbucket Web site to create a repository that has the same name as the local directory and
+local repository.  You must follow Bitbucket's instructions to push the code and tags in your local repository to the
+remote one.  
 
 \begin{enumerate} 
 			
