@@ -33,23 +33,59 @@ you see on the screen? GVim can provide you a useful listing of these errors if 
 quickfix list and then press enter.  After you have returned to the error location, go ahead and fix the problem by adding back
 the semi-colon and recompiling your program. 
 
+\section*{Improving the GatorTweet System}
+
+You will notice that the {\tt Tweet} class contains two instance variables and several methods.  First, you should add proper
+JavaDoc comments to all of the variables and methods in {\tt Tweet.java}.  Once you have finished adding in all of the comments,
+please notice that the {\tt isValidMessage} method is not correctly implemented.  You should enhance this method so that it
+returns {\tt true} when a candidate message is valid and {\tt false} otherwise.  This method should classify a message as valid as
+long as its length is greater than zero and less than or equal to 140.
+
+% \section*{Adding a GatorTweet Class}
+
+You should implement a {\tt GatorTweet} class that performs the following operations in {\tt main}:
+
+\vspace*{-.1in}
+\begin{enumerate}
+  % \itemsep 0in
+  \item Constructs an {\tt ArrayList} that can only hold {\tt Tweet} objects for the valid {\tt Tweet}s.
+  
+  \item Constructs an {\tt ArrayList} that can only hold {\tt String}s for the invalid tweet messages.
+  
+  \item Uses the {\tt java.util.Scanner} call to read in consecutive lines of text from a file in the {\tt tweets} subdirectory of
+    the {\tt GatorTweet} directory, called ``Tweets.txt'', that contains potential tweets.
+  
+  \item Checks to see if the current tweet message is a valid one or not.  If the message is valid, then it should construct a new
+    {\tt Tweet} and store it inside of the {\tt ArrayList} for the valid instances of the {\tt Tweet} class.  If the message is
+    invalid, then it should not construct a {\tt Tweet} and instead store the {\tt String} message in the {\tt ArrayList} for
+    invalid tweet messages.
+
+  \item Outputs all of the {\tt Tweet}s stored in the {\tt ArrayList} for the valid {\tt Tweet}s.
+
+  \item Outputs all of the {\tt Tweet}s stored in the {\tt ArrayList} for the invalid {\tt Tweet}s.
+
+\end{enumerate}
+
+In the next laboratory assignment we will finish implementing a {\tt GatorTweet} program that can interact with Twitter. For
+instance, we will add features that can authenticate a user with the Twitter servers, display a user's Twitter timeline, and post
+a {\tt Tweet} to the Twitter site.
+
 \section*{Summary of the Required Deliverables}
 
   This assignment invites you to submit one printed version of a tutorial that contains:
 
   \begin{enumerate}
-    \item A commentary on how Vim uses runtime configuration files
-    \item A full-featured description of the basic features associated with the Vim text editor
-    \item A complete introduction to the use of the Vim aforementioned plugins 
+    \item A description of the meaning and purpose of the provided {\tt build.xml} file.
+    \item A screenshot demonstrating that you can display and use the Quickfix List in GVim.
+    \item The final version of your {\tt Tweet.java} and {\tt GatorTweet.java} classes.
+    \item The output associated with running {\tt GatorTweet} with a sample ``Tweets.txt'' file.
   \end{enumerate}
 
-  Along with turning in a printed version of your tutorial, you should ensure that your document is also available in the repository
-  that is named according to the convention {\tt cs112S2014-<your user name>}. Please note that students in the class are
-  responsible for completing and submitting their own version of this assignment.  However, you also will be assigned to work in a
-  team that is tasked with ensuring that all of its members are able to complete each step of the assignment.  Team members should
-  make themselves available to each other to answer questions and resolve any problems that develop during the laboratory session.
-  While it is acceptable for members of a team to have high-level conversations, you should not share source code or full command
-  lines with your team members. To ensure that you can communicate effectively, members of each team should sit next to each other
-  in the room.  Please see the instructor if you have questions about this policy.
+  Along with turning in a printed version of these deliverables, you should ensure that everything is also available in the
+  repository that is named according to the convention {\tt cs112S2014-<your user name>}. Please note that students in the class
+  are responsible for completing and submitting their own version of this assignment.    While it is acceptable for members of
+  this class to have high-level conversations, you should not share source code or full command lines with your classmates. To
+  ensure that you can communicate effectively, members of each team should sit next to each other in the room.  Please see the
+  instructor if you have questions about this policy.
 
   \end{document}
