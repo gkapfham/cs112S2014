@@ -20,13 +20,13 @@ assignment represents the first of a two-part series of assignments.
 \section*{Accessing and Understanding GatorTweet}
 
 To start this laboratory assignment, you should return to the {\tt cs112S2014-share} Git repository and type the command {\tt git
-pull} in the terminal window.  Now, you should have a {\tt lab3/GatorTweet/} directory that you can explore further.  Where is
-the Java source code in this new directory? Why is it stored in the directory where you found it? Now, you should use GVim to
-study the source code in the {\tt build.xml} file.  What do you think is the purpose of this file? For this assignment, you can
-type the command {\tt :make} in your GVim window and it will compile the {\tt Tweet.java} class and save the bytecode in the
-correct subdirectories inside of the {\tt bin/} directory. 
+pull} in the terminal window.  Now, you should have a {\tt lab3/GatorTweet/} directory that you can explore further.  Where is the
+Java source code in this new directory? Why is it stored in the directory where you found it? Now, you should use GVim to study
+the source code in the {\tt build.xml} file.  What do you think is the purpose of this file? For this assignment, you can type the
+command {\tt :make} in your GVim window and it will compile the {\tt Tweet.java} file and save the bytecode in the correct
+subdirectories inside of the {\tt bin/} directory. 
 
-At this point, you should purposefully insert an error into the {\tt Tweet.java} class.  For instance, you can open the file in
+At this point, you should purposefully insert an error into the {\tt Tweet.java} file.  For instance, you can open the file in
 GVim and then remove one of the semi-colons at the end of a source code line. Now, type {\tt :make} again in GVim.  What output do
 you see on the screen? GVim can provide you with a useful listing of these errors if you type {\tt <,q>} and then navigate around this
 ``Quickfix List''. When you want to zoom to a location in your Java program that contains an error, you can find it in the
@@ -36,10 +36,10 @@ the semi-colon and recompiling your program.
 \section*{Improving the GatorTweet System}
 
 You will notice that the {\tt Tweet} class contains two instance variables and several methods.  First, you should add proper
-JavaDoc comments to all of the variables and methods in {\tt Tweet.java}.  Once you have finished adding in all of the comments,
-please notice that the {\tt isValidMessage} method is not correctly implemented.  You should enhance this method so that it
-returns {\tt true} when a candidate message is valid and {\tt false} otherwise.  This method should classify a message as valid as
-long as its length is greater than zero and less than or equal to 140.
+JavaDoc comments to all of the variables and methods in {\tt Tweet.java}.  Once you have finished adding in all of the necessary
+comments, please notice that the {\tt isValidMessage} method is not correctly implemented.  You should enhance this method so that
+it returns {\tt true} when a candidate message is valid and {\tt false} otherwise.  This method should classify a message as valid
+as long as its length is greater than zero and less than or equal to 140.
 
 % \section*{Adding a GatorTweet Class}
 
@@ -53,7 +53,8 @@ Now, you should implement a {\tt GatorTweet} class that performs the following o
   \item Constructs an {\tt ArrayList} that will only hold {\tt String}s for the invalid tweet messages.
   
   \item Uses the {\tt java.util.Scanner} call to read in consecutive lines of text from a file in the {\tt tweets/} subdirectory of
-    the {\tt GatorTweet/} directory, called ``Tweets.txt'', that contains potential tweets.
+    the {\tt GatorTweet/} directory, called ``Tweets.txt'', that contains potential tweets. (It is worth noting that this file can
+    contain both valid and invalid tweets).
   
   \item Checks to see if the current tweet message is a valid one or not.  If the message is valid, then it should construct a new
     {\tt Tweet} and store it inside of the {\tt ArrayList} for the valid instances of the {\tt Tweet} class.  If the message is
@@ -77,7 +78,7 @@ a {\tt Tweet} to the Twitter site.
   \begin{enumerate}
     \item A description of the meaning and purpose of the provided {\tt build.xml} file.
     \item A screenshot demonstrating that you can display and use the quickfix list in GVim.
-    \item The final version of your {\tt Tweet.java} and {\tt GatorTweet.java} classes.
+    \item The final version of your {\tt Tweet.java} and {\tt GatorTweet.java} files.
     \item The output associated with running {\tt GatorTweet} with a sample ``Tweets.txt'' file.
   \end{enumerate}
 
