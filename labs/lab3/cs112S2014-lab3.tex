@@ -11,6 +11,28 @@
 
 \section*{Introduction}
 
+Twitter is a commonly used social media network.  As we refamiliarize ourselves with the fundamental characteristics of the
+object-oriented programming paradigm and continue to learn more advanced features of the Vim integrated development environment
+(IDE), we will take the first steps towards implementing a complete Twitter client. Along with learning how to use, enhance, and
+extend a Java class, we will also review the steps that you must take to perform console input and output. This laboratory
+assignment represents the first of a two-part series of assignments. 
+
+\section*{Accessing and Understanding GatorTweet}
+
+To start this laboratory assignment, you should return to the {\tt cs112S2014-share} Git repository and type the command {\tt git
+pull} in the terminal window.  Now, you should have a {\tt lab3/GatorTweet/} directory that you can explore further.  Where is
+the Java source code in this new directory? Why is it stored in the directory where you found it? Now, you should use GVim to
+study the source code in the {\tt build.xml} file.  What do you think is the purpose of this file? For this assignment, you can
+type the command {\tt :make} in your GVim window and it will compile the {\tt Tweet.java} class and save the bytecode in the
+correct subdirectories inside of the {\tt bin} directory. 
+
+At this point, you should purposefully insert an error into the {\tt Tweet.java} class.  For instance, you can open the file in
+GVim and then remove one of the semi-colons at the end of a source code line. Now, type {\tt :make} again in GVim.  What output do
+you see on the screen? GVim can provide you a useful listing of these errors if you type {\tt <,q>} and then navigate around this
+``Quickfix List''. When you want to zoom to a location in your Java program that contains an error, you can find it in the
+quickfix list and then press enter.  After you have returned to the error location, go ahead and fix the problem by adding back
+the semi-colon and recompiling your program. 
+
 \section*{Summary of the Required Deliverables}
 
   This assignment invites you to submit one printed version of a tutorial that contains:
