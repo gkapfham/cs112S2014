@@ -24,9 +24,19 @@ To start this laboratory assignment, you should return to the {\tt cs112S2014-sh
 the Java source code in this new directory? Why is it stored in the directory where you found it? Now, you should use GVim to
 study the source code in the {\tt build.xml} file.  As you did for the past assignment, you can type the command {\tt :make} in
 your GVim window and it will compile the three Java classes and save the bytecode in the correct subdirectories inside of the
-{\tt bin/} directory. 
+{\tt bin/} directory.  Please see the instructor if you cannot get this to work.
 
 \section*{Connecting to the Twitter Service}
+
+\begin{sloppypar}
+  At this point, you should look in the {\tt lib/} directory and notice that there is a file called {\tt twitter4j-core-3.0.5.jar}.
+  This file contains the additional Java classes that we will need to communicate with the Twitter service. Before you run any
+  program that communicates with Twitter, you must use the {\tt export CLASSPATH} command to add this file to your {\tt CLASSPATH}
+  variable.  To learn more about the library that we are using to connect to Twitter, please visit the Web site for a
+  system called Twitter4J:
+  \url{http://twitter4j.org/en/index.html}. Before you try to connect to Twitter, you should also study the {\tt
+    twitter4j.properties} file. What does it contain? Why?
+\end{sloppypar}
 
 
 
