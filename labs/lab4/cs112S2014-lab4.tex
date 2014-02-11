@@ -28,58 +28,60 @@ your GVim window and it will compile the three Java classes and save the bytecod
 
 \section*{Connecting to the Twitter Service}
 
-\begin{sloppypar}
-  At this point, you should look in the {\tt lib/} directory and notice that there is a file called {\tt twitter4j-core-3.0.5.jar}.
-  This file contains the additional Java classes that we will need to communicate with the Twitter service. Before you run any
-  program that communicates with Twitter, you must use the {\tt export CLASSPATH} command to add this file to your {\tt CLASSPATH}
-  variable.  To learn more about the library that we are using to connect to Twitter, please visit the Web site for a
-  system called Twitter4J:
-  \url{http://twitter4j.org/en/index.html}. Before you try to connect to Twitter, you should also study the {\tt
-    twitter4j.properties} file. What does it contain? Why?
-\end{sloppypar}
+\begin{sloppypar} At this point, you should look in the {\tt lib/} directory and notice that there is a file called {\tt
+    twitter4j-core-3.0.5.jar}.  This file contains the additional Java classes that we will need to communicate with the Twitter
+  service. Before you run any program that communicates with Twitter, you must use the {\tt export CLASSPATH} command to add this
+  file to your {\tt CLASSPATH} variable.  To learn more about the library that we are using to connect to Twitter, please visit
+  the Web site for the Twitter4J, available at \url{http://twitter4j.org/en/index.html}. Before you try to connect to Twitter,
+  you should also study the {\tt twitter4j.properties} file. What does it contain? Why?  \end{sloppypar}
 
-Before you complete the next step, you should make sure that you have already created your Twitter account, followed some other
-Twitter users, and tweeted through the Web-based interface. Now, you should go ahead and run the {\tt CreateProperties} program in
-your terminal window.  You should follow this program's instructions to authorize your own Twitter client to access your Twitter
-account.  As you complete this step, please make sure that you record the content of the {\tt twitter4j.properties} file before
-and after running the {\tt CreateProperties} program.  Also, you should take a screen shot of the Web site that the program asks
-you to visit. Finally, you can try to run the {\tt GetHomeTimeline} program.  What output did it produce? Were you able to connect
-to the Twitter service? Students who could not complete this step should see the instructor.
+In advance of completing the next step, you should make sure that you have already created your Twitter account, followed some
+other Twitter users, and tweeted through the Web-based interface. Now, you can go ahead and run the {\tt CreateProperties}
+program in your terminal window.  You should follow this program's instructions to authorize your own Twitter client to access
+your Twitter account.  As you complete this step, please make sure that you record the content of the {\tt twitter4j.properties}
+file before and after running the {\tt CreateProperties} program.  Also, you should take a screen shot of the Web site that the
+program asks you to visit. Finally, you can try to run the {\tt GetHomeTimeline} program.  What output did it produce? Were you
+able to connect to the Twitter service? Students who could not complete this step should see the instructor.
 
 \section*{Finishing the GatorTweet System}
-
-  First, you should add the code in the {\tt GetHomeTimeline} to your own {\tt GatorTweet} program, thus giving your system the
-  ability to display your own home timeline.  However, we need to add additional features to {\tt GatorTweet}!  For instance, you
-  should implement a feature that can post all of the valid tweets in the ``Tweets.txt'' file to your timeline.  If the {\tt
+  
+First, you should add the code in the {\tt GetHomeTimeline} to your own {\tt GatorTweet} program, thus giving your system the
+ability to display your own home timeline.  However, we still need to add additional features to {\tt GatorTweet}!  For instance, you
+should implement a feature that can post all of the valid tweets in the ``Tweets.txt'' file to your timeline.  If the {\tt
   Twitter} class in Twitter4J provides an instance method called {\tt updateStatus} what code do you need to write to post all of
-  the valid tweets to the Twitter system?  Students who want to learn more about the {\tt updateStatus} method, can check the
-  \url{http://twitter4j.org/javadoc/} Web site.  Again, remember that you will need to use an iteration construct to iterate
-  through all of the valid tweets.  In order to implement this feature, you will also need to add a {\tt getMessage} method to
-  {\tt Tweet.java}. Once you have posted each of the valid tweets to Twitter, your program should also output some debugging
-  information indicating that the tweet was correctly posted.  
+the valid tweets to the Twitter system?  Students who want to learn more about the {\tt updateStatus} method can check the
+\url{http://twitter4j.org/javadoc/} Web site.  Again, remember that you will need to use an iteration construct to iterate through
+all of the valid tweets.  In order to fully implement this feature, you will also need to add a {\tt getMessage} method to {\tt
+  Tweet.java}. Once you have posted each of the valid tweets to Twitter, your program should also output some debugging
+information indicating that the tweet was correctly posted.  
 
-  Right now, our {\tt GatorTweet} prgoram has a very limited user interface.  As one way to overcome this limitation, you should
+  Right now, our {\tt GatorTweet} prgoram has a very limited user interface.  As one way to overcome this limitation, you can 
   implement a command-line interface that will allow the user to only read the home timeline, only update the status through the
   ``Tweets.txt'' file, or to do both.  In order to implement this feature, you will need to add conditional logic to your program.
-  Finally, you should implement at least one additional feature of your choice.  For instance, you could implement a random tweet
+  Finally, you should develop at least one additional feature of your choice.  For instance, you could implement a random tweet
   generator that will create a random tweet and then post it to Twitter. Alternatively, you could implement a feature that allows
-  you to perform direct messaging on Twitter.
+  you to perform direct messaging on Twitter. As you finish the {\tt GatorTweet} system, please make sure that you add comments to
+  all of the Java classes, including those that you did not modify or extend. You must add a comment to the header of every
+  class and method, the declaration of every variable, and every other important line of code. 
 
 \section*{Summary of the Required Deliverables}
 
   This assignment invites you to submit one printed version of the following deliverables: 
 
   \begin{enumerate}
-    \item A description of the meaning and purpose of the provided {\tt build.xml} file.
-    \item A screenshot demonstrating that you can display and use the quickfix list in GVim.
-    \item The final version of your {\tt Tweet.java} and {\tt GatorTweet.java} files.
-    \item The output associated with running {\tt GatorTweet} with a sample ``Tweets.txt'' file.
+    \item The contents of {\tt twitter4j.properties} before and after running {\tt CreateProperties}.
+    \item A screenshot of the Web site that the {\tt CreateProperties} program asks you to visit.
+    \item The final version of your {\tt GatorTweet.java} that implements all of the required features.
+    \item The output from running {\tt GetHomeTimeline} when debugging mode is and is not enabled.
+    \item The output from running {\tt GatorTweet} with all of the command-lines that it supports.
+    \item A reflective commentary on the challenges that you faced when implementing {\tt GatorTweet}.
   \end{enumerate}
 
   Along with turning in a printed version of these deliverables, you should ensure that everything is also available in the
   repository that is named according to the convention {\tt cs112S2014-<your user name>}. Please note that students in the class
   are responsible for completing and submitting their own version of this assignment.    While it is acceptable for members of
   this class to have high-level conversations, you should not share source code or full command lines with your classmates.
-  Please see the instructor if you have questions about the policies for this laboratory assignment.
+  Deliverables that are nearly identical to the work of others will be taken as evidence of violating the \mbox{Honor Code}.
+  Please see the instructor if you have questions about the policies for this assignment.
 
   \end{document}
