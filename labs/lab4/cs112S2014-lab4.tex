@@ -38,45 +38,18 @@ your GVim window and it will compile the three Java classes and save the bytecod
     twitter4j.properties} file. What does it contain? Why?
 \end{sloppypar}
 
-
+Before you complete the next step, you should make sure that you have already created your Twitter account, followed some other
+Twitter users, and tweeted through the Web-based interface. Now, you should go ahead and run the {\tt CreateProperties} program in
+your terminal window.  You should follow this program's instructions to authorize your own Twitter client to access your Twitter
+account.  As you complete this step, please make sure that you record the content of the {\tt twitter4j.properties} file before
+and after running the {\tt CreateProperties} program.  Also, you should take a screen shot of the Web site that the program asks
+you to visit. Finally, you can try to run the {\tt GetHomeTimeline} program.  What output did it produce? Were you able to connect
+to the Twitter service? Students who could not complete this step should see the instructor.
 
 \section*{Finishing the GatorTweet System}
 
-You will notice that the {\tt Tweet} class contains two instance variables and several methods.  First, you should add proper
-JavaDoc comments to all of the variables and methods in {\tt Tweet.java}.  Once you have finished adding in all of the necessary
-comments, please notice that the {\tt isValidMessage} method is not correctly implemented.  You should enhance this method so that
-it returns {\tt true} when a candidate message is valid and {\tt false} otherwise.  This method should classify a message as valid
-as long as its length is greater than zero and less than or equal to 140.
+Now, you should implement a complete {\tt GatorTweet} class that performs the following operations in {\tt main}:
 
-% \section*{Adding a GatorTweet Class}
-
-Now, you should implement a {\tt GatorTweet} class that performs the following operations in {\tt main}:
-
-\vspace*{-.1in}
-\begin{enumerate}
-  % \itemsep 0in
-  \item Constructs an {\tt ArrayList} that will only hold {\tt Tweet} objects for the valid {\tt Tweet}s.
-  
-  \item Constructs an {\tt ArrayList} that will only hold {\tt String}s for the invalid tweet messages.
-  
-  \item Uses the {\tt java.util.Scanner} call to read in consecutive lines of text from a file in the {\tt tweets/} subdirectory of
-    the {\tt GatorTweet/} directory, called ``Tweets.txt'', that contains potential tweets. (It is worth noting that this file can
-    contain both valid and invalid tweets).
-  
-  \item Checks to see if the current tweet message is a valid one or not.  If the message is valid, then it should construct a new
-    {\tt Tweet} and store it inside of the {\tt ArrayList} for the valid instances of the {\tt Tweet} class.  If the message is
-    invalid, then it should not construct a {\tt Tweet} and instead store the {\tt String} message in the {\tt ArrayList} for
-    invalid tweet messages.
-
-  \item Outputs all of the {\tt Tweet}s stored in the {\tt ArrayList} for the valid tweet messages. 
-
-  \item Outputs all of the {\tt Tweet}s stored in the {\tt ArrayList} for the invalid tweet messages. 
-
-\end{enumerate}
-
-In the next laboratory assignment we will finish implementing a {\tt GatorTweet} program that can interact with Twitter. For
-instance, we will add features that can authenticate a user with the Twitter servers, display a user's Twitter timeline, and post
-a {\tt Tweet} to the Twitter site.
 
 \section*{Summary of the Required Deliverables}
 
