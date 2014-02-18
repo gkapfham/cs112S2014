@@ -18,9 +18,39 @@ Moreover, we will investigate how the bit-depth of the variable that stores the 
 influence the correctness of the final result. After learning how to conduct a detailed experimental study of an
 algorithm, students will develop and refine their writing skills as they create a comprehensive report of their results.
 
-\section*{Accessing the Fibonacci Benchmark}
+\section*{Accessing the Fibonacci Benchmarking Framework}
+
+\begin{sloppypar} To start this laboratory assignment, you should return to the {\tt cs112S2014-share} Git repository
+  and type the command {\tt git pull} in the terminal window.  Now, you should have a {\tt lab5/FibonacciBenchmark}
+  directory that you can explore further.  Once again, please make sure that you can find the source code in this new
+  directory and you understand why the directories in the assignment are structured the way that they are. Now, you
+  should use GVim to study the source code in the {\tt build.xml} file.  As in the past assignment, you can type the
+  command {\tt :make} in your GVim window and it will compile the three Java classes and save the bytecode in the
+  correct subdirectories inside of the {\tt bin/} directory.  Please see the instructor if you cannot get this to work.
+\end{sloppypar}
+ 
+\section*{Adding Additional Features}
+
+If you study the source code carefully, you will see that the {\tt UseFibonacci} program currently accepts two
+command-line arguments. What are they? As part of this laboratory assignment, you must extend the {\tt UseFibonacci}
+class and the command-line arguments that it can accept. You should add a third command-line argument that corresponds
+to one of the words {\tt int}, {\tt long}, or {\tt all}. After {\tt UseFibonacci} extracts this new command-line
+argument, it should use this additional information to run a specific experiment. For example, one valid execution might
+be: {\tt java UseFibonacci 10 all long}. This command line would indicate that you should only execute the methods
+within {\tt RecursiveFibonacci} and {\tt IterativeFibonacci} that operate on variables with the {\tt long} primitive
+data type.  You will need to add conditional logic to {\tt UseFibonacci} in order to correctly implement this additional
+feature. Please see the instructor if you have questions about this task.
 
 \section*{Conducting Experiments to Evaluate Efficiency}
+
+\begin{sloppypar}
+As part of this assignment, we will examine the following different implementations: (i) {\tt RecursiveFibonacci} using
+{\tt int}, (ii) {\tt RecursiveFibonacci} using {\tt long}, (iii) {\tt IterativeFibonacci} using {\tt int}, and (iv) {\tt
+  IterativeFibonacci} using {\tt long}. The {\tt UseFibonacci} class relies on the {\tt Profiler} class is in the {\tt
+  profiler.jar} file in the {\tt lib/} directory of the Git repository.  This means that the {\tt UseFibonacci} program
+will not run correctly unless you have both the {\tt bin/} directory and the {\tt profiler.jar} archive inside of your
+{\tt CLASSPATH} environment variable.
+\end{sloppypar}
 
 \section*{Summary of the Required Deliverables}
 
