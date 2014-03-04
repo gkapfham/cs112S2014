@@ -26,8 +26,20 @@ the {\tt build.xml} file.  As in the past assignments, when editing a Java progr
 in your GVim window and it will compile the all of the Java classes and save the bytecode in the correct subdirectories
 inside of the {\tt bin/} directory.  Please see the instructor if you cannot get this to work.
 
+\section*{Adding Features to Support Experimentation}
 
-\section*{Incorporating Additional Features}
+As you study the provided source code, you will notice that it contains several sorting algorithms (e.g., {\tt
+  BubbleSort}) and a {\tt SortingExperiment} class that facilitates experimentation. Currently, the {\tt
+  SortingExperiment} class provides methods that generate random arrays of {\tt int}s, calls the appropriate sorting
+routines, and outputs all of the results.  By default, the benchmarking framework runs each sorting algorithm five times
+and reports the average time needed to run the algorithms.
+
+Currently, the {\tt SortingExperiment} is hard-coded to sort {\tt int} arrays of size ten. Furthermore, the current
+values of the configuration variables cause it to run a specified algorithm for five trials.  While the {\tt verbose}
+parameter is currently a command-line argument, the other variables (e.g., {\tt numExperiments} and {\tt
+  experimentSize}) are not.  As such, you should add a complete set of command-line arguments that will make it easier
+to conduct experiments with sorting algorithms. What command-line arguments would best support experimentation with 
+the \mbox{sorting algorithms}?
 
 \section*{Conducting Experiments to Evaluate Efficiency}
 
