@@ -12,6 +12,13 @@
 \setcounter{tocdepth}{3}
 
 \usepackage{epsfig}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
 
 % define widow protection 
         
@@ -48,6 +55,20 @@
 
 \begin{document}
 
+\lstset{language=Java,
+basicstyle=\ttfamily,
+keywordstyle=\color{javapurple}\bfseries,
+stringstyle=\color{javared},
+commentstyle=\color{javagreen},
+morecomment=[s][\color{javadocblue}]{/**}{*/},
+%numbers=left,
+numberstyle=\scriptsize\color{black},
+stepnumber=1,
+numbersep=7pt,
+tabsize=4,
+showspaces=false,
+showstringspaces=false}
+
 % handle widows appropriately
 \def\widow#1{\vskip #1\vbadness10000\penalty-200\vskip-#1}
 
@@ -59,36 +80,29 @@ Examination 1 \\
 
 \end{center}
 
-\noindent
-Answer the five questions that are listed on the following sheets.
-You must provide answers to these questions on a separate sheet of
-paper.  Please develop responses that clearly express your ideas in
-the most succinct manner possible.  You are not permitted to complete
-this examination in conjunction with any of your classmates.
-Furthermore, you cannot consult any outside references during this
-examination.  If you have questions concerning the problems, then
-please visit my office during the examination period.  If you leave
-the classroom to take the exam, then you are responsible for checking
-the white board for status updates.
+\noindent Answer the five questions that are listed on the following sheets.  You must provide answers to these
+questions on a separate sheet of paper.  Please develop responses that clearly express your ideas in the most succinct
+manner possible.  You are not permitted to complete this examination in conjunction with any of your classmates.
+Furthermore, you cannot consult any outside references during this examination.  If you have questions concerning the
+problems, then please visit my office during the examination period.  If you leave the classroom to take the exam, then
+you are responsible for checking the white board for status updates.
 
 \newpage
 
 \begin{enumerate}
 
-\item ({\bf 10 Points}) Arithmetic expressions can be used inside of
-  conditional logic statements and iteration constructs.  Answer the
-  following questions about arithmetic, variables, and the basic use
-  of the Java programming language.
+\item ({\bf 10 Points}) Arithmetic expressions can be used inside of conditional logic statements and iteration
+  constructs.  Answer the following questions about arithmetic, variables, and the basic use of the tools that support
+  programming in the Java language.
 
 \begin{enumerate}
 
-\item ({\bf 4 Points}) The following code segment uses arithmetic
-  expressions to change the value of {\tt int} variables.  Show
-  exactly what is output by the following sequence of Java statements
-  (you may assume that these statements are contained within a {\tt
-    main} method of an {\tt ArithmeticExpression} class):
+\item ({\bf 4 Points}) The following code segment uses arithmetic expressions to change the value of {\tt int}
+  variables.  Show exactly what is output by the following sequence of Java statements (you may assume that these
+  statements are contained within the {\tt main} method of an {\tt ArithmeticExpression} class):
 
-\begin{verbatim}
+\begin{minipage}{6in}
+  \begin{lstlisting}
         final int TRUE = 1;
         int a = 10;
         int b = 20;
@@ -101,13 +115,13 @@ the white board for status updates.
         c = a % 2;
         d = b % 3;
         
-        System.out.println("a = " + a + ", b = " + b);
-        System.out.println("c = " + c + ", d = " + d);
-\end{verbatim}
+        System.out.println(" a = " + a + " , b = " + b);
+        System.out.println(" c = " + c + " , d = " + d);
+\end{lstlisting}
+\end{minipage}
 
-\item ({\bf 3 Points}) What are the input(s) and output(s) of a Java
-  compiler and virtual machine?  You should answer this question by
-  drawing an easy-to-read diagram that contains meaningful labels.
+\item ({\bf 3 Points}) What are the input(s), output(s), and purpose(s) of a Java compiler and virtual machine?  You
+  should answer this question by drawing an easy-to-read diagram that contains meaningful labels, arrows, and boxes.
 
 %% \item ({\bf 2 Points}) Discuss the similarities and differences
 %%   between {\em instance} variables and {\em static} variables.  Also,
