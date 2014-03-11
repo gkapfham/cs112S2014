@@ -290,59 +290,6 @@ public class Weeee
 }
 \end{verbatim}
 
-
-%% \item ({\bf 3 Points}) Give an example of three separate methods that
-%%   have a worst-case time complexity of $O(n)$, $O(n^2)$, and $O(n^3)$
-%%   respectively.  The first method with $O(n)$ time complexity should
-%%   be called {\tt methodOne}, the second method can be called {\tt
-%%     methodTwo}, and the third is {\tt methodThree}.  {\em As long as
-%%     the method has the correct worst-case time complexity, you may
-%%     write any valid Java code}.
-
-%% \item ({\bf 3 Points}) Equation~(\ref{eq:sum}) provides a formula that
-%%   can be used to calculate summations.  Give a method called {\tt
-%%     iterativeSum(int n)} that uses a {\tt for} or {\tt while} loop to
-%%   sum the numbers from 1 to $n$.  Next, please implement a {\tt
-%%     computeSum(int n)} method that uses Equation~(\ref{eq:sum}) to
-%%   directly perform the summation.  Which method is faster?  Or, do the
-%%   methods exhibit the same run-time performance?  Regardless of your
-%%   view about the performance of these algorithms, your response must
-%%   include a complete justification of your response.
-
-%%   \begin{equation}
-%%     \sum_{i=1}^{n}i = \frac{n \times (n+1)}{2}
-%%     \label{eq:sum}
-%%   \end{equation}
-
-%% \item ({\bf 2 Points}) Explain the function $g(n)$ that defines the
-%%   complexity class $O(g(n))$ for the function $f(n) = 2^{100}$ and
-%%   $f(n) \in O(g(n))$.  You should defend why you selected the $g(n)$
-%%   that you did.
-
-%% \item ({\bf )
-
-%% \item ({\bf 3 Point}) Which function grows the {\em fastest}? Which
-%%   function grows the {\em slowest}?  {\em Why}?  Your response should
-%%   include a mathematical justification.
-
-%%   \begin{enumerate}
-
-%%   \item $f(n) = n^2$
-
-%%   \item $f(n) = n$
-
-%%   \item $f(n) = n!$
-
-%%   \item $f(n) = n^n$
-
-%%   \item $f(n) = 2^n$
-
-%%   \item $f(n) = \frac{n}{n}$
-
-%%   \end{enumerate}
-
-\end{enumerate}
-
 \begin{figure}[p]
 
 \begin{verbatim}
@@ -362,7 +309,7 @@ public class Kinetic
     }
     else
     {
-      final_velocity.append("Undefined");
+      final_velocity.append( " Undefined " );
     }
     return final_velocity.toString();
   }
@@ -376,38 +323,87 @@ public class Kinetic
 
 \newpage
 
-\item ({\bf 10 Points}) The Java programming language supports the use
-  of a wide variety of primitive and reference data types, including
-  arrays.  Answer the following questions about the use of variables
-  in Java programs.
+\item ({\bf 10 Points}) It is important to conduct a thorough analysis of the performance of an algorithm.  Answer the
+  following questions about the analysis of algorithms.
 
-\begin{enumerate}
+  \begin{enumerate}
 
-\item ({\bf 4 Points}) Support that a Java program contained the
-  following line of code in a {\tt main} method: {\tt int[] six = new
-    int[6];}.  Would this line of code cause the compiler to produce
-  an error?  After answering this first question, draw a picture of
-  what this array would look like in the memory of the Java virtual
-  machine.  Finally, you should furnish one line of array-accessing
-  code that would cause the program to throw an exception and one that
-  would not throw an exception.
+    \item ({\bf 3 Points}) Give an example of three separate methods that have a worst-case time complexity of $O(n)$,
+      $O(n^2)$, and $O(n^3)$ respectively.  The first method with $O(n)$ time complexity should be called {\tt
+      methodOne}, the second method can be called {\tt methodTwo}, and the third is {\tt methodThree}.  {\em As long as
+      the method has the correct worst-case time complexity, you may write any valid Java code}.
 
-\item ({\bf 4 Points}) The Java programming language allows you to
-  define inheritance hierarchies that show the relationship between
-  objects.  Using proper labels and real Java class names, draw a
-  diagram that illustrates an inheritance hierarchy with one {\em
-    superclass} and at least one {\em subclass}.  After you have
-  finished your diagram, please explain why you designed the
-  inheritance hierarchy in this way.
+    \item ({\bf 3 Points}) Equation~(\ref{eq:sum}) provides a formula that can be used to calculate summations.  Give a
+      method called {\tt iterativeSum(int n)} that uses a {\tt for} or {\tt while} loop to sum the numbers from 1 to
+      $n$.  Next, please implement a {\tt computeSum(int n)} method that uses Equation~(\ref{eq:sum}) to directly
+      perform the summation.  Which method is faster?  Or, do the methods exhibit the same run-time performance?
+      Regardless of your view about the performance of these algorithms, your response must include a complete
+      justification of your response.
 
+      \begin{equation}
+        \sum_{i=1}^{n}i = \frac{n \times (n+1)}{2}
+        \label{eq:sum}
+      \end{equation}
+
+    \item ({\bf 2 Points}) Explain the function $g(n)$ that defines the complexity class $O(g(n))$ for the function
+      $f(n) = 2^{100}$ and $f(n) \in O(g(n))$.  You should defend why you selected the $g(n)$ that you did.
+
+    \item ({\bf 3 Point}) Which function grows the {\em fastest}? Which function grows the {\em slowest}?  {\em Why}?
+      Your response should include a mathematical justification.
+
+      \begin{enumerate}
+
+        \item $f(n) = n^2$
+
+        \item $f(n) = n$
+
+        \item $f(n) = n!$
+
+        \item $f(n) = n^n$
+
+        \item $f(n) = 2^n$
+
+        \item $f(n) = \frac{n}{n}$
+
+      \end{enumerate}
+
+\end{enumerate}
+
+% \newpage
+
+% % % % \item ({\bf 10 Points}) The Java programming language supports the use
+% % % %   of a wide variety of primitive and reference data types, including
+% % % %   arrays.  Answer the following questions about the use of variables
+% % % %   in Java programs.
+% % % % 
+% % % \begin{enumerate}
+% % % 
+% % \item ({\bf 4 Points}) Support that a Java program contained the
+% %   following line of code in a {\tt main} method: {\tt int[] six = new
+% %     int[6];}.  Would this line of code cause the compiler to produce
+% %   an error?  After answering this first question, draw a picture of
+% %   what this array would look like in the memory of the Java virtual
+% %   machine.  Finally, you should furnish one line of array-accessing
+% %   code that would cause the program to throw an exception and one that
+% %   would not throw an exception.
+% % 
+% \item ({\bf 4 Points}) The Java programming language allows you to
+%   define inheritance hierarchies that show the relationship between
+%   objects.  Using proper labels and real Java class names, draw a
+%   diagram that illustrates an inheritance hierarchy with one {\em
+%     superclass} and at least one {\em subclass}.  After you have
+%   finished your diagram, please explain why you designed the
+%   inheritance hierarchy in this way.
+% 
 % \item ({\bf 2 Points}) Suppose that a Java program contained the
 %   following variable declaration: {\tt ArrayList<Tweet> validTweets =
 %     new ArrayList<Tweet>();}.  What is an {\tt Arraylist}?  What does
 %   it mean when the {\tt ArrayList} called {\tt validTweets} is
 %   declared with the syntax {\tt ArrayList<Tweet>}?
 % 
-\end{enumerate}
+% \end{enumerate}
 
+\end{enumerate}
 
 \end{enumerate}
 
