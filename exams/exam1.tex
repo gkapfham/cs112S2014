@@ -92,7 +92,7 @@ you are responsible for checking the white board for status updates.
 \begin{enumerate}
 
 \item ({\bf 10 Points}) Arithmetic expressions can be used inside of conditional logic statements and iteration
-  constructs.  Answer the following questions about arithmetic, variables, and the basic use of the tools that support
+  constructs.  Answer the following questions about arithmetic, variables, and the use of the tools that support
   programming in the Java language.
 
 \begin{enumerate}
@@ -114,8 +114,8 @@ you are responsible for checking the white board for status updates.
         c = a % 2;
         d = b % 3;
         
-        System.out.println(" a = " + a + " , b = " + b);
-        System.out.println(" c = " + c + " , d = " + d);
+        System.out.println(" a = "  + a + " , b = "  + b);
+        System.out.println(" c = "  + c + " , d = "  + d);
   \end{verbatim}
   \vspace*{-.2in}
 
@@ -154,19 +154,14 @@ you are responsible for checking the white board for status updates.
 
 \newpage
 
-\item ({\bf 10 Points}) The Java programming language supports many
-  different primitive data types and constructs for solving problems.
-  Answer the following questions about these features of the Java
-  programming language.
+\item ({\bf 10 Points}) The Java programming language supports many different primitive data types and constructs for
+  solving problems.  Answer the following questions about these features of the Java programming language.
 
 \begin{enumerate}
 
-\item ({\bf 3 Points}) The Java programming language supports the
-  definition of methods that have a {\tt void} return type.  What does
-  it mean if a method returns {\tt void}?  Your response should give
-  an example of a method that could reasonably have a {\tt void}
-  return type.  Please explain why your chosen method should be {\tt
-    void}.
+\item ({\bf 3 Points}) The Java programming language allows for the definition of methods that have a {\tt void} return
+  type.  What does it mean if a method returns {\tt void}?  Your response should give an example of a method that could
+  reasonably have a {\tt void} return type.  Please explain why your chosen method should be {\tt void}.
 
 %% \item ({\bf 3 Points}) Briefly define the terms {\em inheritance},
 %%   {\em encapsulation}, and {\em polymorphism}.  For the terms
@@ -277,7 +272,7 @@ public class Weeee
     public static void weeee()
     {
 
-        System.out.println( " Weeee! " );
+        System.out.println( " Weeee!"  );
         weeee();
 
     }
@@ -335,12 +330,11 @@ public class Kinetic
       methodOne}, the second method can be called {\tt methodTwo}, and the third is {\tt methodThree}.  As long as each 
       method has the correct worst-case time complexity, you may write any valid Java code.
 
-    \item ({\bf 4 Points}) Equation~(\ref{eq:sum}) provides a formula that can be used to calculate summations.  Give a
+    \item ({\bf 5 Points}) Equation~(\ref{eq:sum}) provides a formula that can be used to calculate summations.  Give a
       method called {\tt iterativeSum(int n)} that uses a {\tt for} or {\tt while} loop to sum the numbers from 1 to
       $n$.  Next, please implement a {\tt computeSum(int n)} method that uses Equation~(\ref{eq:sum}) to directly
       perform the summation.  Which method is faster?  Or, do the methods exhibit the same run-time performance?
-      Regardless of your view about the performance of these algorithms, your response must include a complete
-      justification of your response.
+      Your answer to this question should always fully justify your response.
 
       \begin{equation}
         \sum_{i=1}^{n}i = \frac{n \times (n+1)}{2}
