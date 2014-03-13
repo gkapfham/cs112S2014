@@ -1,0 +1,44 @@
+% Author: Frantisek Burian
+\documentclass{minimal}
+\usepackage{tikz}
+%%%<
+\usepackage{verbatim}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{5pt}%
+%%%>
+\begin{comment}
+:Title: Filesystem tree
+:Tags: Trees; Styles
+:Author: Frantisek Burian
+:Slug: filesystem-tree
+\end{comment}
+\usetikzlibrary{trees}
+\begin{document}
+\tikzstyle{every node}=[draw=black,thick,anchor=west]
+\tikzstyle{selected}=[draw=red,fill=red!30]
+\tikzstyle{purple}=[draw=purple,fill=purple!30]
+\tikzstyle{green}=[draw=green,fill=green!30]
+\tikzstyle{blue}=[draw=blue,fill=blue!30]
+\tikzstyle{orange}=[draw=orange,fill=orange!30]
+\tikzstyle{yellow}=[draw=yellow,fill=yellow!30]
+\tikzstyle{optional}=[dashed,fill=gray!50]
+\begin{tikzpicture}[%
+  grow via three points={one child at (0.5,-0.7) and
+  two children at (0.5,-0.7) and (0.5,-1.4)},
+  edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
+  \node {texmf}
+    child { node [purple] {doc}}		
+    child { node [green] {fonts}}
+    child { node [blue] {source}}
+    child { node [selected] {tex}
+      child { node [orange] {generic}}
+      child { node [optional] {latex}}
+      child { node [yellow] {plain}}
+    }
+    child [missing] {}				
+    child [missing] {}				
+    child [missing] {}				
+    child { node [purple] {texdoc}};
+\end{tikzpicture}
+\end{document}
