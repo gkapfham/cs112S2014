@@ -1,20 +1,54 @@
-%!TEX root=cs112S2014-lab6.tex 
-% mainfile: cs112S2014-lab6.tex 
+%!TEX root=cs112S2014-lab7.tex 
+% mainfile: cs112S2014-lab7.tex 
 
 \input{labspre.tex}
 
 \usepackage[compact]{titlesec}
 
-\begin{document} \MYTITLE{Laboratory Assignment Six: Evaluating the Performance of Sorting Algorithms}
-\MYHEADERS{Laboratory Assignment Six}{Due: March 25, 2014}
+\begin{document} \MYTITLE{Laboratory Assignment Seven: Performing Arithmetic Interpretation with a Stack}
+\MYHEADERS{Laboratory Assignment Seven}{Due: April 2, 2014}
 
 \section*{Introduction}
 
-Sorting algorithms are commonly used in a wide variety of practical computer applications.  In this laboratory
-assignment, we will learn more about sorting while also continuing to familiarize ourselves with the empirical analysis
-of algorithms.  In particular, we will analyze the performance of five sorting algorithms as they are applied to
-randomly generated input data sets.  Students who would like to learn more about sorting algorithms are encouraged to
-visit the following Web site: \url{https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html}.
+\section*{Implementing an Arithmetic Interpreter}
+
+A machine with only a single stack for storage is called a \texttt{StackMachine}. A stack machine can have a primitive
+language that describes the operations that it can perform. Consider the following primitive language for a stack
+machine:
+
+\begin{tabular}{r | l}
+Command & Meaning \\ \hline
+\emph{int} & push \emph{int} on the stack \\
++ & push a ``+'' on the stack \\
+s & push an ``s'' on the stack \\
+e & evaluate the top of the stack (see below) \\
+d & display contents of the stack \\
+x & stop the stack machine \\ 
+\end{tabular}
+
+The ``d'' command simply prints out the contents of the stack, one element
+per line, beginning with the top of the stack. The behavior of the ``e''
+command depends on the contents of the stack when the ``e'' is issued. The
+following describes the rules that the ``e'' command must follow:
+
+\begin{enumerate}
+\item
+  If `+' is on the top of the stack, then the `+' is popped off the
+  stack, the following two integers are popped and added, and the result
+  is pushed back on the stack.
+\item
+  If 's' is on top of the stack, then the 's' is popped off the stack
+  and the following two items are swapped on the stack.
+\item
+  If an integer is on the top of the stack, or the stack is empty, then
+  the stack is left unchanged.
+\end{enumerate}
+
+The following examples illustrates the impact of the `e' command in
+various situations. Note that in these examples, the top of the stack is
+on the left.
+
+
 
 \section*{Accessing and Using the Sorting Benchmarking Framework}
 
