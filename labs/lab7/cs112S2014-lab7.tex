@@ -10,11 +10,30 @@
 
 \section*{Introduction}
 
+  Many real-world programs use the stack abstract data type (ADT) to solve a problem.  For instance, the Java virtual
+  machine (JVM) relies on a stack to store the activation records for the methods that are called during the execution
+  of a program.  Stacks are often implemented as part of the hardware used in many modern computers. In this laboratory
+  assignment, you will learn how to use the stack ADT in a Java program.  In particular, you will implement and test a
+  {\tt StackMachine} that provides a simple language supporting arithmetic operations.
+
+\section*{Learning About the Stack}
+
+  Before you start to implement your {\tt StackMachine}, you should take some time to learn more about the Stack ADT.
+  What is an example of a progrem that can be solved using the stack? Your response to this question should include a
+  brief introduction to the problem and a discussion of how the stack is incorporated into the solution. For instance,
+  you could explain a program that you have already implemented that used a stack to solve a key problem. Alternatively,
+  you can study books, articles, and online sources to investigate a well-known problem that can be solved through the
+  use of a stack.  For instance, you could study the algorithm that converts an expression in infix notation to postfix
+  notation. Please see the instructor if you have questions about this part of the assignment.
+
+
+
 \section*{Implementing an Arithmetic Interpreter}
 
-A machine with only a single stack for storage is called a \texttt{StackMachine}. A stack machine can have a primitive
-language that describes the operations that it can perform. Consider the following primitive language for a stack
-machine:
+  
+  A machine with only a single stack for storage is called a \texttt{StackMachine}. A stack machine can have a primitive
+  language that describes the operations that it can perform. Consider the following primitive language for a stack
+  machine:
 
 \begin{tabular}{r | l}
 Command & Meaning \\ \hline
@@ -26,27 +45,24 @@ d & display contents of the stack \\
 x & stop the stack machine \\ 
 \end{tabular}
 
-The ``d'' command simply prints out the contents of the stack, one element
-per line, beginning with the top of the stack. The behavior of the ``e''
-command depends on the contents of the stack when the ``e'' is issued. The
-following describes the rules that the ``e'' command must follow:
+  The ``d'' command simply prints out the contents of the stack, one element per line, beginning with the top of the
+  stack. The behavior of the ``e'' command depends on the contents of the stack when the ``e'' is issued. The following
+  describes the rules that the ``e'' command must follow:
 
 \begin{enumerate}
-\item
-  If `+' is on the top of the stack, then the `+' is popped off the
-  stack, the following two integers are popped and added, and the result
-  is pushed back on the stack.
-\item
-  If 's' is on top of the stack, then the 's' is popped off the stack
-  and the following two items are swapped on the stack.
-\item
-  If an integer is on the top of the stack, or the stack is empty, then
-  the stack is left unchanged.
+
+  \item If ``+'' is on the top of the stack, then the ``+'' is popped off the stack, the following two integers are popped
+    and added, and the result is pushed back on the stack.  
+  
+  \item If ``s'' is on top of the stack, then the ``s'' is popped off the stack and the following two items are swapped
+    on the stack.  
+  
+  \item If an integer is on the top of the stack, or the stack is empty, then the stack is left unchanged.  
+
 \end{enumerate}
 
-The following examples illustrates the impact of the `e' command in
-various situations. Note that in these examples, the top of the stack is
-on the left.
+The following examples illustrates the impact of the ``e'' command in various situations. Note that in these examples,
+the top of the stack is on the left.
 
 
 
