@@ -53,19 +53,40 @@ x & stop the stack machine \\
 
 \begin{enumerate}
 
-  \item If ``+'' is on the top of the stack, then the ``+'' is popped off the stack, the following two integers are popped
-    and added, and the result is pushed back on the stack.  
+  \item If a ``+'' is on the top of the stack, then the ``+'' is popped off the stack, the following two integers are
+    popped and added, and the result is pushed back on the stack.  
   
-  \item If ``s'' is on top of the stack, then the ``s'' is popped off the stack and the following two items are swapped
-    on the stack.  
+  \item If an ``s'' is on top of the stack, then the ``s'' is popped off the stack and the following two elements are
+    swapped on the top of the stack.  
   
-  \item If an integer is on the top of the stack, or the stack is empty, then the stack is left unchanged.  
+  \item If an integer is on the top of the stack or the stack is empty, then the stack is left unchanged.  
 
 \end{enumerate}
 
-The following examples illustrates the impact of the ``e'' command in various situations. Note that in these examples,
-the top of the stack is on the left.
+The following examples illustrates the impact of the ``e'' command. Note that in this table, the top of the stack is on
+the left and the notation ``$\ldots$'' denotes the rest of the stack's contents. 
 
+\begin{tabular}{r | l}
+State of Stack Before ``e'' & State of Stack After ``e'' \\ \hline
++ 1 2 5 s $\ldots$  & 3 5 s $\ldots$ \\
+s 1 + + 10 $\ldots$ & + 1 + 10 $\ldots$ \\
+1 + 3 $\ldots$      & 1 + 3 $\ldots$ \\
+\end{tabular}
+
+You must implement an interpreter for this arithmetic language. The input to your program is a series of commands, with
+one per line. The interpreter should prompt for commands with
+\texttt{\textgreater{}\textgreater{}\textgreater{}\textgreater{}\textgreater{}} or something else appropriate. You do
+not need to do any error checking.  That is, you can assume that all commands are valid and that the appropriate number
+of arguments are on the stack for evaluation. However, students may implement a sensible exception handling system for
+extra credit.  Finally, you should be aware of the fact that you will have to decide what types of variables are going
+to be pushed onto and popped off of the {\tt java.util.Stack} maintained by the \texttt{StackMachine}; this choice may
+influence the types of casting that the methods will perform.
+
+As previously mentioned, you should implement a {\tt StackMachine.java} file that declares and uses an instance of {\tt
+java.util.Stack}. Students who are interested in earning extra credit can use the examples in the book to implement
+their own {\tt Stack} as an alternative to the {\tt java.util.Stack}.  Since your {\tt StackMachine} must accept input
+from the user, you should leverage the {\tt Scanner} class, as described in Section 1.6 of your textbook. Please see the
+instructor if you have any questions.
 
 \section*{Summary of the Required Deliverables}
 
@@ -73,6 +94,7 @@ the top of the stack is on the left.
 
   \begin{enumerate} 
   \itemsep0pt
+
   \item A description of all of the command-line arguments supported by your benchmarking tool 
 
   \item A sample output from running {\tt SortingExperiment} in all of its relevant configurations
