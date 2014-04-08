@@ -5,7 +5,7 @@
 
 \usepackage[compact]{titlesec}
 
-\begin{document} \MYTITLE{Laboratory Assignment Eight: Queue-Based Simulation of the Josephus Problem}
+\begin{document} \MYTITLE{Laboratory Assignment Eight: Queue-Based Solving of the Josephus Problem}
 \MYHEADERS{Laboratory Assignment Eight}{Due: April 15, 2014}
 
 \section*{Introduction}
@@ -48,7 +48,10 @@
   While this approach is suitable for demonstrating the use of the solver, it is not ideal if you need to run a series
   of experiments to evaluate the efficiency of this technique. Therefore, you should modify the program so that it
   accepts two command-line arguments: the number of children involved in the simulated game and the number of steps for
-  which each round must be run. Next, you should enhance the program so that it
+  which each round must be run. Next, you should enhance the program so that it automatically generates a list of
+  ``children'' and calls the solver with both an instance of the child-populated {\tt NodeQueue} and the steps
+  parameter. Finally, you should add timing code to the program that can calculate how long it takes to run the solver.
+  What is the program's output? How did you determine it worked correctly?
 
 \section*{Evaluating the Efficiency of the Solver}
 
