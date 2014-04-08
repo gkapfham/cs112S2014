@@ -5,7 +5,7 @@
 
 \usepackage[compact]{titlesec}
 
-\begin{document} \MYTITLE{Laboratory Assignment Eight: Queue-Based Solving of the Josephus Problem}
+\begin{document} \MYTITLE{Laboratory Assignment Eight: A Queue-Based Solution to the Josephus Problem}
 \MYHEADERS{Laboratory Assignment Eight}{Due: April 15, 2014}
 
 \section*{Introduction}
@@ -14,18 +14,19 @@
   may use a round-robin scheduler that leverages a queue to determine which process it should execute next. In this
   laboratory assignment, you will use a linked-list-based queue, called the {\tt NodeQueue}, to run a ``simulator'' that
   can solve the Josephus problem. Then, you will analyze the source-code of the simulator to determine its worst-case
-  time complexity and then  
+  time complexity.  Finally, you will extend the solver so that it accepts command-line arguments and use this enhanced
+  version to conduct a comprehensive study of the method's time efficiency.
 
 \section*{Learning About the Queue}
 
   Before you start to extend the implementation of the provided {\tt JosephusSolver}, you should take some time to learn
   more about the queue ADT.  What are the methods that the queue provides?  What is the difference between an {\tt
     ArrayQueue} and a {\tt NodeQueue}? What is an example of a problem that can be solved using the queue? Your response
-  to this question should include a brief introduction to the problem and a discussion of how the queue is incorporated
-  into the solution. For instance, you could explain a program that you have already implemented that manipulated a
-  queue to solve a problem.  Alternatively, you can study books, articles, and online sources to investigate a
-  well-known problem that can be solved through the use of a queue.  Please see the instructor if you have questions
-  about this part of the assignment.
+  to the previous question should include a brief introduction to the problem and a discussion of how the queue is
+  incorporated into the solution. For instance, you could explain a program that you have previously implemented that
+  manipulated a queue to solve a problem.  Alternatively, you can study books, articles, and online sources to
+  investigate a well-known problem that can be solved through the use of a queue.  Please see the instructor if you have
+  questions about this part of the assignment.
 
 \section*{Using Simulation to Solve the Josephus Problem}
 
