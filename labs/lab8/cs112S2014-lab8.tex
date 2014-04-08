@@ -55,12 +55,25 @@
 
 \section*{Evaluating the Efficiency of the Solver}
 
+  After you have finished enhancing the {\tt JosephusSolver} by adding command lines and timing code, you should
+  carefully study the method called {\tt Josephus}.  Using the big-O notation, what is the worst-case time complexity of
+  this method?  In addition to stating your chosen complexity, you should clearly justify your choice. Does this
+  analysis suggest that this solver is efficient or inefficient? 
+
+  Finally, you should conduct an empirical study to evaluate the run-time efficiency of the {\tt JosephusSolver}.  To
+  develop an accurate understanding of the solver's performance, you should pick five different values for {\tt k} and
+  run the solver with ten different groups of children of increasing size. For each value of {\tt k} and size of the
+  group, you should run the solver ten times and calculate the arithmetic mean of the execution times. Make sure that
+  you pick values for {\tt k} and the size of the group that will give an accurate picture of worst-case time
+  efficiency. Next, you should create a table of data or a graph that summarizes your results. Does the data from your
+  experimental evaluation confirm the worst-case time complexity that your derived? Why or why not?
+  
 \section*{Summary of the Required Deliverables}
 
   This assignment invites you to submit a signed and printed version of the following deliverables: 
 
   \begin{enumerate} 
-  \itemsep0pt
+  % \itemsep0pt
 
   \item A complete description of a problem that can be solved by using the queue abstract data type
 
@@ -69,6 +82,8 @@
   \item The output from five separate runs of {\tt JosephusSolver}, demonstrating it's correctness 
 
   \item A written report that provides a response to all of the questions posed in this assignment
+
+  \item A justified statement of the worst-case time complexity for the {\tt Josephus} method
 
   \item A written analysis of the {\tt JosephusSolver}'s efficiency when it is run in different configurations 
 
