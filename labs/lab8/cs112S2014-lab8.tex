@@ -13,7 +13,8 @@
   Many real-world programs use the queue abstract data type (ADT) to solve a problem.  For instance, an operating system
   may use a round-robin scheduler that leverages a queue to determine which process it should execute next. In this
   laboratory assignment, you will use a linked-list-based queue, called the {\tt NodeQueue}, to run a ``simulator'' that
-  can solve the Josephus problem.
+  can solve the Josephus problem. Then, you will analyze the source-code of the simulator to determine its worst-case
+  time complexity and then  
 
 \section*{Learning About the Queue}
 
@@ -22,12 +23,35 @@
     ArrayQueue} and a {\tt NodeQueue}? What is an example of a problem that can be solved using the queue? Your response
   to this question should include a brief introduction to the problem and a discussion of how the queue is incorporated
   into the solution. For instance, you could explain a program that you have already implemented that manipulated a
-  queue.  Alternatively, you can study books, articles, and online sources to investigate a well-known problem that can
-  be solved through the use of a queue.  Please see the instructor if you have questions about this part of the
-  assignment.
+  queue to solve a problem.  Alternatively, you can study books, articles, and online sources to investigate a
+  well-known problem that can be solved through the use of a queue.  Please see the instructor if you have questions
+  about this part of the assignment.
 
 \section*{Using Simulation to Solve the Josephus Problem}
- 
+
+  Many children have played the game of ``hot potato'' that requires them to sit in a circle and pass an object around
+  the circle until a leader rings a bell or stops playing some music.  At this point in the game, the child holding the
+  potato must stop playing the game and, after the remaining children move closer together in the circle, the game
+  continues in the same fashion. This game play continues until there is only one child left, who is then declared the
+  winner.
+
+  It turns out that this game was first recorded by Flavius Josephus, a first century Jewish historian who was a solider
+  in a Jewish-Roman war.  It is possible to use a queue to ``simulate'' the process of playing this game and then
+  quickly determine who will win.  \mbox{After typing} the command {\tt git pull} in the {\tt cs112S2014-share}
+  repository, you will see that there is \mbox{now a} {\tt labs/lab8/} directory that contains a {\tt build.xml} file, a
+  {\tt net-datastructures-5-0.jar} Java archive, and {\tt JosephusSolver.java} file in the {\tt
+    src/edu/allegheny/solver/} directory.  You can run this program by typing {\tt ant JosephusSolver} in the terminal
+  or {\tt :Ant JosephusSolver} \mbox{in GVim}.
+
+  If you study {\tt JosephusSolver.java} you will notice that it contains a {\tt main} method that creates different
+  groups of children and then runs the solver by specifying a group of children and a stopping point for each round.
+  While this approach is suitable for demonstrating the use of the solver, it is not ideal if you need to run a series
+  of experiments to evaluate the efficiency of this technique. Therefore, you should modify the program so that it
+  accepts two command-line arguments: the number of children involved in the simulated game and the number of steps for
+  which each round must be run. Next, you should enhance the program so that it
+
+\section*{Evaluating the Efficiency of the Solver}
+
 \section*{Summary of the Required Deliverables}
 
   This assignment invites you to submit a signed and printed version of the following deliverables: 
