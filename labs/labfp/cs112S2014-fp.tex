@@ -29,7 +29,7 @@ abstract data type. You will also learn more about practice of real-world softwa
 manage the schedule of your project. Finally, you will hone your writing and speaking skills as you document, present,
 and release your working tool for the analysis of Todo.txt files.
 
-\section*{Learning About the Todo.txt Format}
+\section*{Understanding and Using Todo.txt}
 
 Before you start to specify, design, implement, and test your system, you need to learn more about the Todo.txt
 ecosystem that is described at \url{http://todotxt.com/}. You and your team members should study and discuss this site
@@ -51,6 +51,23 @@ todo list is as simple as starting to type in the Vim text editor.  Moreover, yo
 the command {\tt <leader>D} and you can sort all of the tasks in your Todo.txt file by typing {\tt <leader>s}. Before
 you finish this phase of the final project, please make sure that all of your team members understand how to use the
 context and project annotations supported by the Todo.txt format.
+
+\section*{Advanced Command-Line Argument Handling}
+
+In past laboratory assignments, you often handled command-line arguments by writing code that would inspect the values
+in the {\tt args[]} that is a parameter to the {\tt main} method.  However, the programs that we have used during our
+class and laboratory sessions handled the command-line arguments in a brittle fashion: they required the command-line
+arguments to appear in a fixed order and they did not allow for the specification of arguments in a fashion similar to
+that used by most programs run in the Linux terminal window. Thankfully, there is a third-party Java library, called
+JCommander, that makes it easier to perform advanced argument management. 
+
+Since we want our Todo.txt analysis tool to have a full-featured and easy-to-use command-line argument system, we will
+use JCommander for this final project.  You and your team members should learn how to use JCommander by visiting the
+following Web sites: \url{http://jcommander.org/} and \url{https://github.com/cbeust/jcommander}. You can find a current
+version of the JCommander JAR file by running the {\tt git pull} command in the {\tt cs112S2014-share/} repository.
+After studying JCommander's user documentation, discussing the library with your team members, and resolving any
+questions by talking with the course instructor, your team should consider trying a simple example with JCommander. Can
+you display a help menu and recognize arguments?
 
 \section*{Summary of the Required Deliverables}
 
