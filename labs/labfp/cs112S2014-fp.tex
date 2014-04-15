@@ -6,13 +6,13 @@
 \usepackage[compact]{titlesec}
 
 \begin{document} \MYTITLE{Final Project: Automated Analysis of Todo.txt Files}
-\MYHEADERS{Final Project}{Due: May 6, 2014 at 12:00 noon}
+\MYHEADERS{Final Project}{Due: May 6, 2014 at 5:00 pm}
 
 \section*{Introduction}
 
 Todo.txt is a file format and a suite of tools that supports the management of todo lists and the completion of project
-tasks. Originally developed by Gina Trapani, Todo.txt currently includes an ecosystem of tools such as mobile apps and
-desktop applications, that enable individuals and teams to manage projects. In this final project, you and your team
+tasks. Originally developed by Gina Trapani, Todo.txt currently includes an ecosystem of tools, such as mobile apps and
+desktop applications, that enable individuals and teams to manage projects. In this final assignment, you and your team
 members will use Todo.txt to track your progress as you build a tool that can automatically analyze Todo.txt files.
 
 Current Todo.txt tools (e.g., todo.txt-cli, todo.txt-vim, and the Todo.txt Android app) enable a user to input and mark
@@ -20,14 +20,14 @@ as completed a wide variety of tasks.  Yet, right now there is no tool that can 
 Todo.txt file and determine how the time of an individual or a team was spent. You and your team members will implement
 a complete tool for the automated analysis of Todo.txt files.  For instance, your tool should be able to determine how
 many high-priority tasks you recently completed.  In addition, your tool should be able to ascertain how many tasks were
-completed in the different contexts and projects represented in a specified Todo.txt file. 
+completed in the different contexts and projects represented in a certain Todo.txt file. 
 
 As you specify, design, implement, test, debug, demonstrate, and release your Todo.txt analysis system, you and your
 team members will develop your knowledge and skills in computer science as you learn more about advanced command-line
 argument management, the reading and parsing of an input file, and the analysis of frequencies with the hashtable
-abstract data type. You will also learn more about practice of real-world software development as you work in teams and
-manage the schedule of your project. Finally, you will hone your writing and speaking skills as you document, present,
-and release your working tool for the analysis of Todo.txt files.
+abstract data type. You will also learn more about the practice of real-world software development as you work in teams
+and manage the schedule of your project. Finally, you will hone your writing and speaking skills as you document,
+present, and release your working tool for the analysis of Todo.txt files.
 
 \section*{Understanding and Using Todo.txt}
 
@@ -36,9 +36,9 @@ ecosystem that is described at \url{http://todotxt.com/}. You and your team memb
 so that you understand the philosophy behind the Todo.txt system. To gain more experience with using the Todo.txt
 system, each of your team members should install and use the todo.txt-vim plugin that is available for download from the
 \url{https://github.com/freitass/todo.txt-vim} Web site. To get this plugin fully working, you will need to add a {\tt
-  Bundle} command to your {\tt .vimrc} file and then run the {\tt BundleInstall} command in a separate instance of Vim.
-To ensure that Vim always enters into todo-mode when you edit a Todo.txt file, you should add the following line to your
-{\tt .vimrc}:
+Bundle} statement to your {\tt .vimrc} file and then run the {\tt BundleInstall} command in a separate instance of Vim.
+To ensure that Vim always enters into todo-mode when you edit a Todo.txt file, you should also add the following line to
+your {\tt .vimrc}:
 
 {\tt autocmd BufNewFile,BufRead [Tt]odo.txt set filetype=todo}
 
@@ -50,42 +50,42 @@ of an existing Todo.txt file can view the one available at \url{http://todotxt.c
 todo list is as simple as starting to type in the Vim text editor.  Moreover, you can mark a task as completed by using
 the command {\tt <leader>D} and you can sort all of the tasks in your Todo.txt file by typing {\tt <leader>s}. Before
 you finish this phase of the final project, please make sure that all of your team members understand how to use the
-context and project annotations supported by the Todo.txt format.
+priority, context, and project annotations supported by the Todo.txt format.
 
 \section*{Advanced Command-Line Argument Handling}
 
 In past laboratory assignments, you often handled command-line arguments by writing code that would inspect the values
-in the {\tt args[]} that is a parameter to the {\tt main} method.  However, the programs that we have used during our
-class and laboratory sessions handled the command-line arguments in a brittle fashion: they required the command-line
-arguments to appear in a fixed order and they did not allow for the specification of arguments in a fashion similar to
-that used by most programs run in the Linux terminal window. Thankfully, there is a third-party Java library, called
-JCommander, that makes it easier to perform advanced argument management. 
+in the {\tt args[]} array that is a parameter to the {\tt main} method.  However, the programs that we have used during
+our class and laboratory sessions handled the command-line arguments in a brittle fashion: they required the
+command-line arguments to appear in a fixed order and they did not allow for the specification of arguments in a fashion
+similar to that used by most programs run in the Linux terminal window. Thankfully, there is a third-party Java library,
+called JCommander, that makes it easier to perform advanced argument management. 
 
 Since we want our Todo.txt analysis tool to have a full-featured and easy-to-use command-line argument system, we will
 use JCommander for this final project.  You and your team members should learn how to use JCommander by visiting the
-following Web sites: \url{http://jcommander.org/} and \url{https://github.com/cbeust/jcommander}. You can find a current
-version of the JCommander JAR file by running the {\tt git pull} command in the {\tt cs112S2014-share/} repository.
-After studying JCommander's user documentation, discussing the library with your team members, and resolving any
-questions by talking with the course instructor, your team should consider trying a simple example with JCommander. Can
-you display a help menu and recognize arguments?
+following Web sites: \url{http://jcommander.org/} and \url{https://github.com/cbeust/jcommander/}. You can find a
+current version of the JCommander JAR file by running the {\tt git pull} command in the {\tt cs112S2014-share/}
+repository.  After studying JCommander's user documentation, discussing the library with your team members, and
+resolving any questions by talking with the course instructor, your team should consider trying a simple example with
+JCommander. Can you display a help menu and recognize the arguments?
 
 \section*{Reading and Parsing Todo.txt Entries}
 
-  As described in Section 1.6 of your textbook, the {\tt java.util.Scanner} class provides methods like {\tt
-  hasNextLine} and {\tt nextLine} to read in lines from a text file.  Since the Todo.txt file is stored in plain text,
+  As described in Section 1.6 of your textbook, the {\tt java.util.Scanner} class provides methods, like {\tt
+  hasNextLine} and {\tt nextLine}, to read in lines from a text file.  Since the Todo.txt file is stored in plain text,
   you and your team members can use an instance of {\tt java.util.Scanner} to input all of its lines into your program.
   Then, your program must break each line of text into its constituent parts.  For instance, suppose that the program
   has just read in the following line from the file:
 
   (A) @Teaching +112 Write the final project assignment sheet
 
-  The string tokenization process would separately return each part of the overall string, identifying ``(A)'',
-  ``Teaching'', ``+112'', and the other remaining words. According to Todo.txt terminology, which one of these is the
-  priority?  Which is the context?  And, finally, which of these is the project?  To automatically answer these
-  questions, you and your team members may decide to investigate the use of a regular expressions and methods, like the
-  one called {\tt findInLine}, that are also provided by the {\tt java.util.Scanner}. In addition, you may want to
-  look into the use of the Java class called {\tt java.util.StringTokenizer}. Finally, students who want to learn more
-  about regular expressions can consult online references such as the following:
+  The string tokenization process would separately return each part of any string that adheres to the Todo.txt format,
+  identifying ``(A)'', ``Teaching'', ``+112'', and the other remaining words. According to Todo.txt terminology, which
+  one of these is the priority?  Which is the context?  And, finally, which of these is the project?  To automatically
+  answer these questions, you and your team members may decide to investigate the use of a regular expressions and
+  methods, like the one called {\tt findInLine}, that are also provided by the {\tt java.util.Scanner}. In addition, you
+  may want to look into the use of the Java class called {\tt java.util.StringTokenizer}. Finally, students who want to
+  learn more about regular expressions can consult online references such as the following:
 
   \vspace*{-.25in}
   \begin{itemize}
@@ -117,35 +117,41 @@ you display a help menu and recognize arguments?
 
 \section*{Summary of the Required Deliverables}
 
+ To complete this final project, your team should evenly divide the work between its members.  In order to support
+ collaboration with your team, please create a version control repository that is named according to the convention {\tt
+ cs112S2014-<your team number>} and share this repository with each other and the course instructor. By the start of the
+ last laboratory session on April 29, 2014 you and your team should be prepared to give a full-featured, public
+ demonstration of the current version of your system. Finally, you must finish and release your Todo.txt analyzer and
+ submit signed and printed versions of the following deliverables no later than 5 pm on May 6, 2014.
+
   
-
-  This assignment invites you to submit a signed and printed version of the following deliverables: 
-
-  \begin{enumerate} 
+  \vspace*{-.05in}
+ \begin{enumerate} 
   \itemsep0pt
 
-  \item A complete description of a problem that can be solved by using the queue abstract data type
+  \item The Todo.txt file(s) that your team members used to manage the completion of this project
 
-  \item The properly commented version of {\tt JosephusSolver.java} and any other Java files you create
+  \item Using examples, a complete description of the features provided by your Todo.txt analysis
 
-  \item The output from five separate runs of {\tt JosephusSolver}, demonstrating it's correctness 
+  \item Comprehensive user documentation that explains how to run the Todo.txt analyzer
 
-  \item A written report that provides a response to all of the questions posed in this assignment
+  \item A written explanation of how your program uses scanning, parsing, and hashtables
 
-  \item A justified statement of the worst-case time complexity for the {\tt Josephus} method
+  \item The output from five separate runs of your final system, demonstrating it's correctness 
 
-  \item A written analysis of the {\tt JosephusSolver}'s efficiency when it is run in different configurations 
+  \item A justified statement of the worst-case time complexity for at least two methods 
 
-  \item A reflective commentary on the challenges that you faced when completing this assignment 
+  \item A privately submitted review of each member of your team, documenting all contributions 
+
+  \item A personal commentary on the challenges that you faced when completing this assignment 
    
   \end{enumerate}
+  \vspace*{-.05in}
 
-  Along with turning in a printed version of these deliverables, you should ensure that everything is also available in
-  the repository that is named according to the convention {\tt cs112S2014-<your user name>}. Please note that students
-  in the class are responsible for completing and submitting their own version of this assignment.    While it is
-  acceptable for members of this class to have high-level conversations, you should not share source code or full
-  command lines with your classmates.  Deliverables that are nearly identical to the work of others will be taken as
-  evidence of violating the \mbox{Honor Code}.  Please see the instructor if you have questions about the policies for
-  this assignment.
+  Please note that each team is responsible for completing and submitting one version of this assignment.  While it is
+  acceptable for members of this different teams to have high-level conversations, they should not share source code or
+  full command lines with each other.  Deliverables from one team that are nearly identical to the work of another team
+  will be taken as evidence of violating the \mbox{Honor Code}.  Please see the instructor if you have questions about
+  this policy.
 
   \end{document}
