@@ -6,7 +6,7 @@
 \usepackage[compact]{titlesec}
 
 \begin{document} \MYTITLE{Final Project: Automated Analysis of Todo.txt Files}
-\MYHEADERS{Final Project}{Due: May 6, 2014 at 5:00 pm}
+\MYHEADERS{Final Project}{Due: May 6, 2014 at 12:00 noon}
 
 \section*{Introduction}
 
@@ -26,10 +26,26 @@ As you specify, design, implement, test, debug, demonstrate, and release your To
 team members will develop your knowledge and skills in computer science as you learn more about advanced command-line
 argument management, the reading and parsing of an input file, and the analysis of frequencies with the hashtable
 abstract data type. You will also learn more about practice of real-world software development as you work in teams and
-manage the schedule of your project. Finally, you will hone your writing and speaking skills and you document and
-present your working tool for the analysis of Todo.txt files.
+manage the schedule of your project. Finally, you will hone your writing and speaking skills as you document, present,
+and release your working tool for the analysis of Todo.txt files.
 
 \section*{Learning About the Todo.txt Format}
+
+Before you start to specify, design, implement, and test your system, you need to learn more about the Todo.txt
+ecosystem that is described at \url{http://todotxt.com/}. You and your team members should study and discuss this site
+so that you understand the philosophy behind the Todo.txt system. To gain more experience with using the Todo.txt
+system, each of your team members should install and use the todo.txt-vim plugin that is available for download from the
+\url{https://github.com/freitass/todo.txt-vim} Web site. To get this plugin fully working, you will need to add a {\tt
+  Bundle} command to your {\tt .vimrc} file and then run the {\tt BundleInstall} command in a separate instance of Vim.
+To ensure that Vim always enters into todo-mode when you edit a Todo.txt file, you should add the following line to your
+{\tt .vimrc}:
+
+{\tt autocmd BufNewFile,BufRead [Tt]odo.txt set filetype=todo}
+
+Once you have properly configured Vim, you are ready to investigate the use of a Todo.txt file. After creating a
+directory in your account called {\tt todo}, you should edit a file called Todo.txt.  Before you start to add content to
+this file, you need to learn more about the Todo.txt format, which is described at
+\url{https://github.com/ginatrapani/todo.txt-cli/wiki/The-Todo.txt-Format}.
 
 \section*{Summary of the Required Deliverables}
 
