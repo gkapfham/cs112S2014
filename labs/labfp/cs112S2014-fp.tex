@@ -71,6 +71,29 @@ you display a help menu and recognize arguments?
 
 \section*{Reading and Parsing Todo.txt Entries}
 
+  As described in Section 1.6 of your textbook, the {\tt java.util.Scanner} class provides methods like {\tt
+  hasNextLine} and {\tt nextLine} to read in lines from a text file.  Since the Todo.txt file is stored in plain text,
+  you and your team members can use an instance of {\tt java.util.Scanner} to input all of its lines into your program.
+  Then, your program must break each line of text into its constituent parts.  For instance, suppose that the program
+  has just read in the following line from the file:
+
+  (A) @Teaching +112 Write the final project assignment sheet
+
+  The string tokenization process would separately return each part of the overall string, identifying ``(A)'',
+  ``Teaching'', ``+112'', and the other remaining words. According to Todo.txt terminology, which one of these is the
+  priority?  Which is the context?  And, finally, which of these is the project?  To automatically answer these
+  questions, you and your team members may decide to investigate the use of a regular expressions and methods, like the
+  one called {\tt findInLine}, that are also provided by the {\tt java.util.Scanner}. In addition, you may want to
+  look into the use of the Java class called {\tt java.util.StringTokenizer}. Finally, students who want to learn more
+  about regular expressions can consult online references such as the following:
+
+  \vspace*{-.25in}
+  \begin{itemize}
+    \itemsep0in
+    \item \url{http://docs.oracle.com/javase/tutorial/essential/regex/}
+    \item \url{http://www.vogella.com/tutorials/JavaRegularExpressions/article.html}
+  \end{itemize}
+
 \section*{Frequency Analysis with Hashtables}
 
 \section*{Todo.txt Analysis Tasks}
