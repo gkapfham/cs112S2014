@@ -1,80 +1,40 @@
-%!TEX root=cs112S2014-lab8.tex 
-% mainfile: cs112S2014-lab8.tex 
+%!TEX root=cs112S2014-fp.tex 
+% mainfile: cs112S2014-fp.tex 
 
 \input{labspre.tex}
 
 \usepackage[compact]{titlesec}
 
-\begin{document} \MYTITLE{Laboratory Assignment Eight: A Queue-Based Solution to the Josephus Problem}
-\MYHEADERS{Laboratory Assignment Eight}{Due: April 15, 2014}
+\begin{document} \MYTITLE{Final Project: Automated Analysis of Todo.txt Files}
+\MYHEADERS{Final Project}{Due: May 6, 2014 at 5:00 pm}
 
 \section*{Introduction}
 
-  Many real-world programs use the queue abstract data type (ADT) to solve a problem.  For instance, an operating system
-  may use a round-robin scheduler that leverages a queue to determine which process it should execute next. In this
-  laboratory assignment, you will use a linked-list-based queue, called the {\tt NodeQueue}, to run a ``simulator'' that
-  can solve the Josephus problem. Then, you will analyze the source-code of the simulator to determine its worst-case
-  time complexity.  Finally, you will extend the solver so that it accepts command-line arguments and use this enhanced
-  version to conduct a comprehensive study of the method's time efficiency.
+Todo.txt is a file format and a suite of tools that supports the management of todo lists and the completion of project
+tasks. Originally developed by Gina Trapani, Todo.txt currently includes an ecosystem of tools such as mobile apps and
+desktop applications, that enable individuals and teams to manage projects. In this final project, you and your team
+members will use Todo.txt to track your progress as you build a tool that can automatically analyze Todo.txt files.
 
-\section*{Learning About the Queue}
+Current Todo.txt tools (e.g., todo.txt-cli, todo.txt-vim, and the Todo.txt Android app) enable a user to input and mark
+as completed a wide variety of tasks.  Yet, right now there is no tool that can automatically analyze an existing
+Todo.txt file and determine how the time of an individual or a team was spent. You and your team members will implement
+a complete tool for the automated analysis of Todo.txt files.  For instance, your tool should be able to determine how
+many high-priority tasks you recently completed.  In addition, your tool should be able to ascertain how many tasks were
+completed in the different contexts and projects represented in a specified Todo.txt file. 
 
-  Before you start to extend the implementation of the provided {\tt JosephusSolver}, you should take some time to learn
-  more about the queue ADT.  What are the methods that the queue provides?  What is the difference between an {\tt
-    ArrayQueue} and a {\tt NodeQueue}? What is an example of a problem that can be solved using the queue? Your response
-  to the previous question should include a brief introduction to the problem and a discussion of how the queue is
-  incorporated into the solution. For instance, you could explain a program that you have previously implemented that
-  manipulated a queue to solve a problem.  Alternatively, you can study books, articles, and online sources to
-  investigate a well-known problem that can be solved through the use of a queue.  Please see the instructor if you have
-  questions about this part of the assignment.
+As you specify, design, implement, test, debug, demonstrate, and release your Todo.txt analysis system, you and your
+team members will develop your knowledge and skills in computer science as you learn more about advanced command-line
+argument management, the reading and parsing of an input file, and the analysis of frequencies with the hashtable
+abstract data type.
 
-\section*{Using Simulation to Solve the Josephus Problem}
+\section*{Learning About the Todo.txt Format}
 
-  Many children have played the game of ``hot potato'' that requires them to sit in a circle and pass an object around
-  the circle until a leader rings a bell or stops playing some music.  At this point in the game, the child holding the
-  potato must stop playing the game and, after the remaining children move closer together in the circle, the game
-  continues in the same fashion. This game play continues until there is only one child left, who is then declared the
-  winner.
-
-  It turns out that this game was first recorded by Flavius Josephus, a first century Jewish historian who was a solider
-  in a Jewish-Roman war.  It is possible to use a queue to ``simulate'' the process of playing this game and then
-  quickly determine who will win.  \mbox{After typing} the command {\tt git pull} in the {\tt cs112S2014-share}
-  repository, you will see that there is \mbox{now a} {\tt labs/lab8/} directory that contains a {\tt build.xml} file, a
-  {\tt net-datastructures-5-0.jar} Java archive, and {\tt JosephusSolver.java} file in the {\tt
-    src/edu/allegheny/solver/} directory.  You can run this program by typing {\tt ant JosephusSolver} in the terminal
-  or {\tt :Ant JosephusSolver} \mbox{in GVim}.
-
-  If you study {\tt JosephusSolver.java} you will notice that it contains a {\tt main} method that creates different
-  groups of children and then runs the solver by specifying a group of children and a stopping point for each round.
-  While this approach is suitable for demonstrating the use of the solver, it is not ideal if you need to run a series
-  of experiments to evaluate the efficiency of this technique. Therefore, you should modify the program so that it
-  accepts two command-line arguments: the number of children involved in the simulated game and the number of steps for
-  which each round must be run. Next, you should enhance the program so that it automatically generates a list of
-  ``children'' and calls the solver with both an instance of the child-populated {\tt NodeQueue} and the steps
-  parameter. Finally, you should add timing code to the program that can calculate how long it takes to run the solver.
-  What is the program's output? How did you determine it worked correctly?
-
-\section*{Evaluating the Efficiency of the Solver}
-
-  After you have finished enhancing the {\tt JosephusSolver} by adding command lines and timing code, you should
-  carefully study the method called {\tt Josephus}.  Using the big-O notation, what is the worst-case time complexity of
-  this method?  In addition to stating your chosen complexity, you should clearly justify your choice. Does this
-  analysis suggest that this solver is efficient or inefficient? 
-
-  Finally, you should conduct an empirical study to evaluate the run-time efficiency of the {\tt JosephusSolver}.  To
-  develop an accurate understanding of the solver's performance, you should pick five different values for {\tt k} and
-  run the solver with ten different groups of children of increasing size. For each value of {\tt k} and size of the
-  group, you should run the solver ten times and calculate the arithmetic mean of the execution times. Make sure that
-  you pick values for {\tt k} and the size of the group that will give an accurate picture of worst-case time
-  efficiency. Next, you should create a table of data or a graph that summarizes your results. Does the data from your
-  experimental evaluation confirm the worst-case time complexity that your derived? Why or why not?
-  
 \section*{Summary of the Required Deliverables}
 
   This assignment invites you to submit a signed and printed version of the following deliverables: 
 
   \begin{enumerate} 
-  % \itemsep0pt
+  \itemsep0pt
 
   \item A complete description of a problem that can be solved by using the queue abstract data type
 
