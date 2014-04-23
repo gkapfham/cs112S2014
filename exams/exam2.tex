@@ -268,7 +268,6 @@ responsible for checking the white board for updates.
             % throw these exceptions.  Your answer should also include a graphical depiction of a {\tt Stack} for each
             % circumstance in which an exception can be thrown.
 
-
         \end{enumerate}
 
         \newpage
@@ -378,6 +377,72 @@ responsible for checking the white board for updates.
     %         %%   for the input parameters.
 
     %     \end{enumerate}
+
+ \item ({\bf 10 Points}) The extendable array data structure uses an
+  underlying array that can ``grow'' when its space is exhausted.
+  Answer these questions about this data type.
+
+  \begin{enumerate}
+
+  \item ({\bf 4 Points}) Clearly explain what happens when an
+    extendable array is full and then the {\tt add(i,e)} method is
+    invoked. Using one or more diagrams, you should discuss the four
+    steps that must be taken in order to properly handle this type of
+    situation.  Your response must also explain how the garbage
+    collector (GC) within the Java virtual machine (JVM) is used
+    during memory management.
+
+  %% \item ({\bf 3 Points}) Identify the similarities and differences
+  %%   between the {\tt java.util.Vector} and the {\tt
+  %%     java.util.ArrayList}.  Your response should explain similarities
+  %%   and differences related to both the performance and the
+  %%   functionality of these implementations of the extendable array
+  %%   ADT.
+
+  \item ({\bf 4 Points}) What are the the similarities and differences
+    between an array and the {\tt java.util.ArrayList}?  Your answer
+    must identify similarities and differences in both the performance
+    and the functionality of these data structures.
+
+%%   \item ({\bf 5 Points}) Suppose that an {\tt ArrayList} called {\tt
+%%     numberList} contained data values that we wanted to store on the
+%%     file system.  What source code would you write to serialize and
+%%     deserialize {\tt numberList} using either XStream or binary
+%%     serialization with Java?  Your response to this question should
+%%     include a diagram that explains the full process of serialization
+%%     and deserialization.  Finally, you may assume that {\tt
+%%       numberList} only contains instances of {\tt java.lang.Integer}.
+
+  %% \item ({\bf 2 Points}) What is a {\tt java.util.Iterator}?  Your
+  %%   answer should clearly discuss the steps that must be taken to
+  %%   create and then use an instance of the {\tt Iterator} class.  Why
+  %%   might a Java programmer who wants to print out each element in an
+  %%   {\tt ArrayList} use an {\tt Iterator} instead of a {\tt for} loop?
+
+  \item ({\bf 2 Points}) The following declaration of an {\tt ArrayList} with ``{\tt ArrayList list = new
+      ArrayList();}'' will cause the Java compiler to produce this warning:
+    
+    \begin{quote}
+      \begin{verbatim}
+Note: CreateArrayLists.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+      \end{verbatim}
+    \end{quote}
+
+  \vspace*{-.25in}
+  Answer the following questions about this line of source code and the warning.
+
+  \begin{enumerate}
+
+    \item Why does the compiler produce this error?
+      
+    \item How would you revise the aforementioned line of code to remove this error?
+
+  \end{enumerate}
+
+  \end{enumerate}
+
+ 
 
     \end{enumerate}
 
