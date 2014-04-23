@@ -196,21 +196,17 @@ responsible for checking the white board for updates.
 
         \begin{enumerate}
 
-          \item ({\bf 5 Points}) Provide a Java-based pseudo-code
-            implementation (or, just plain pseudo-code implementation) of the
-            {\tt push} and {\tt pop} methods for a simple array-based
-            implementation of the {\tt Stack}.  You can assume that the {\tt
-              Stack} is implemented with a fixed size array called {\tt S} and
-            the top of the stack pointer is stored in an {\tt int} variable
-            called {\tt t}.
+          \item ({\bf 5 Points}) Provide a Java-based pseudo-code implementation (or, just plain pseudo-code
+            implementation) of the {\tt push} and {\tt pop} methods for a simple array-based implementation of the {\tt
+            Stack}.  You can assume that the {\tt Stack} is implemented with a fixed-size array called {\tt S} and the
+            top of the stack pointer is stored in an {\tt int} variable called {\tt t}. Are these methods efficient?
+            Why?
 
-          \item ({\bf 5 Points}) The {\tt Stack} abstract data type provides
-            the methods such as {\tt isEmpty}, {\tt top}, {\tt push}, and {\tt
-              pop}.  What is the worst-case time complexity for each of these
-            methods?  Why did you pick these complexities? If we assume that
-            an $N$ element array called {\tt S} is used to store the elements
-            in the {\tt Stack}, what is the worst-case space complexity of the
-            array-based {\tt Stack} implementation? Why?
+          \item ({\bf 5 Points}) The {\tt Stack} abstract data type provides the methods such as {\tt isEmpty}, {\tt
+            top}, {\tt push}, and {\tt pop}.  What is the worst-case time complexity for each of these methods?  Why did
+            you pick these complexities? If we assume that an $n$ element array called {\tt S} is used to store the
+            elements in the {\tt Stack}, what is the worst-case space complexity of the array-based {\tt Stack}
+            implementation? Why?
 
             %% \item ({\bf 2 Points}) Using one or more diagrams and a textual
             %%   explanation, please demonstrate how to use a {\tt Stack} to
@@ -245,9 +241,9 @@ responsible for checking the white board for updates.
 
             \vspace*{-.3in}
 
-          \item ({\bf 2 Points}) The Java virtual machine (JVM) uses both a
-            stack and a heap.  Please clearly explain how the JVM uses these
-            data structures to support the correct execution of a Java program.
+          \item ({\bf 2 Points}) The Java virtual machine (JVM) uses both a stack and a heap.  Please clearly explain
+            how the JVM uses these data structures to support the correct execution of a Java program; your response
+            should include a diagram.
 
             %% \item ({\bf 2 Points}) The time complexity of the {\tt LinkedList}'s
             %%   {\em get(i)} method is given as $O(min(i+1, n-i))$.  Clearly explain
@@ -257,23 +253,32 @@ responsible for checking the white board for updates.
             %%   method.  Your response should include a graphical depiction of an
             %%   instance of the {\tt LinkedList} class.
 
-          \item ({\bf 4 Points}) Explain which methods of the array-based {\tt
-              Stack} abstract data type can throw the {\tt EmptyStackException}
-            and the {\tt FullStackException}.  Your response to this question
-            should discuss why your selected methods can throw these exceptions.
-            Your answer should also include a graphical depiction of a {\tt
-              Stack} for each circumstance in which an exception can be thrown.
+          % \item ({\bf 4 Points}) Explain which methods of the array-based {\tt
+          %     Stack} abstract data type can throw the {\tt EmptyStackException}
+          %   and the {\tt FullStackException}.  Your response to this question
+          %   should discuss why your selected methods can throw these exceptions.
+          %   Your answer should also include a graphical depiction of a {\tt
+          %     Stack} for each circumstance in which an exception can be thrown.
+
+          \item ({\bf 4 Points}) You can implement a {\tt Stack} using either an array or a linked list. Two exceptions
+            that may be thrown by the methods of these implementations may include the {\tt EmptyStackException} and
+            the {\tt FullStackException}.  For an array-based and a linked list-based stack, what methods can throw
+            these two exceptions?  Why do your selected methods throw these exceptions?
+            
+            % throw these exceptions.  Your answer should also include a graphical depiction of a {\tt Stack} for each
+            % circumstance in which an exception can be thrown.
+
 
         \end{enumerate}
 
         \newpage
 
-      \item ({\bf 10 Points}) The {\tt Queue} is important abstract data
-        types (ADT) that is used in many real-world software applications
-        like operating systems.  Answer the following questions about the
-        design, implementation, and evaluation of this abstract data type.
+      % \item ({\bf 10 Points}) The {\tt Queue} is important abstract data
+      %   types (ADT) that is used in many real-world software applications
+      %   like operating systems.  Answer the following questions about the
+      %   design, implementation, and evaluation of this abstract data type.
 
-        \begin{enumerate}
+        % \begin{enumerate}
 
             %%   \item ({\bf 2 Points}) Clearly explain the structure of the {\tt
             %%     Node} and the {\tt DNode}.  Your response should indicate which of
@@ -330,49 +335,49 @@ responsible for checking the white board for updates.
             %%   an equation that the defines the percent reduction.  What does it
             %%   mean if PR is positive or negative?
 
-          \item ({\bf 2 Points}) A complete implementation of an {\tt
-              ArrayQueue} requires the creation and use of the following
-            interface:
+ %       \item ({\bf 2 Points}) A complete implementation of an {\tt
+    %           ArrayQueue} requires the creation and use of the following
+    %         interface:
 
-            \vspace*{-.1in}
+    %         \vspace*{-.1in}
 
-            \begin{verbatim}
-              public interface Queue<E> 
-            \end{verbatim}
+    %         \begin{verbatim}
+    %           public interface Queue<E> 
+    %         \end{verbatim}
 
-            \vspace*{-.3in}
+    %         \vspace*{-.3in}
 
-            \noindent
-            Answer the following questions about this {\tt interface}
-            declaration:
+    %         \noindent
+    %         Answer the following questions about this {\tt interface}
+    %         declaration:
 
-            \begin{enumerate}
+    %         \begin{enumerate}
 
-              \item What is the meaning of the term {\tt interface}?
+    %           \item What is the meaning of the term {\tt interface}?
 
-              \item What is the meaning of the notation {\tt Queue<E>}?
+    %           \item What is the meaning of the notation {\tt Queue<E>}?
 
-            \end{enumerate}
+    %         \end{enumerate}
 
-          \item ({\bf 4 Points}) Suppose that you are implementing a {\tt Queue}
-            with an array called {\tt Q}.  In this implementation, {\tt Q[0]}
-            always denotes the front of the {\tt Queue} and the structure is
-            allowed to grow from there.  Is this an efficient design? Why or why
-            not?
+    %       \item ({\bf 4 Points}) Suppose that you are implementing a {\tt Queue}
+    %         with an array called {\tt Q}.  In this implementation, {\tt Q[0]}
+    %         always denotes the front of the {\tt Queue} and the structure is
+    %         allowed to grow from there.  Is this an efficient design? Why or why
+    %         not?
 
-          \item ({\bf 4 Points}) The double-ended queue, or deque, is a separate
-            data structure from the queue.  What are the similarities and
-            differences between the deque and the queue?  Your response to this
-            question should include details about the names and behavior of the
-            methods that these structures provide.
+    %       \item ({\bf 4 Points}) The double-ended queue, or deque, is a separate
+    %         data structure from the queue.  What are the similarities and
+    %         differences between the deque and the queue?  Your response to this
+    %         question should include details about the names and behavior of the
+    %         methods that these structures provide.
 
-            %% \item ({\bf 2 Points}) The worst-case time complexity of the {\em
-            %%   add(i,e)} method is given as $O(n-i+1)$ where there are $n$ elements
-            %%   currently stored in an array of size $N$.  Clearly explain the
-            %%   meaning of this time complexity and identify the worst-case values
-            %%   for the input parameters.
+    %         %% \item ({\bf 2 Points}) The worst-case time complexity of the {\em
+    %         %%   add(i,e)} method is given as $O(n-i+1)$ where there are $n$ elements
+    %         %%   currently stored in an array of size $N$.  Clearly explain the
+    %         %%   meaning of this time complexity and identify the worst-case values
+    %         %%   for the input parameters.
 
-        \end{enumerate}
+    %     \end{enumerate}
 
     \end{enumerate}
 
