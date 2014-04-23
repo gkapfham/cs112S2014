@@ -134,7 +134,7 @@ responsible for checking the white board for updates.
         is also possible to implement a {\tt Stack} and a {\tt Queue} with
         an array.  Answer the following questions about the trade-offs
         associated with using linked lists and arrays to implement data
-        structures.
+        structures like the {\tt Stack} and the {\tt Queue}.
 
         \begin{enumerate}
 
@@ -162,7 +162,7 @@ responsible for checking the white board for updates.
             %%     a clearly labelled diagram that explains the structure of the node
             %%     that makes up an LL and a DLL.
 
-          \item ({\bf 4 Points}) It is possible to implement a stack with either a linked list or a fixed size array.
+          \item ({\bf 4 Points}) It is possible to implement a stack with either a linked list or a fixed-size array.
             What are the trade-offs associated with the array-based and linked list-based approaches to implementing a
             stack?  In your response to this question, you may use the abbreviation ``AS'' to refer to the array-based
             stack and ``LLS'' to stand for the stack that uses a linked list as its storage mechanism.
@@ -223,14 +223,11 @@ responsible for checking the white board for updates.
 
         \begin{enumerate}
 
-          \item ({\bf 4 Points}) Draw a table that has three columns.  Label the
-            first column ``Operation'', the second column ``Output'', and the
-            third column ``Stack Contents''.  Populate the second and third
-            columns with the output and {\tt Stack} state, respectively, that
-            are created by the following sequence of operations.  You can place
-            one operation on a single row.  Make sure that you clearly indicate
-            where the top of the stack is in your column that describes the
-            state of the {\tt Stack}.
+          \item ({\bf 4 Points}) Draw a table that has three columns.  Label the first column ``Operation'', the second
+            column ``Output'', and the third column ``Stack Contents''.  Populate the second and third columns with the
+            output and {\tt Stack} state, respectively, that are created by running the following sequence of
+            operations.  You can place one operation on a single row; make sure that you clearly indicate where the top
+            of the stack is in your column that describes the state of the {\tt Stack}.
 
             \begin{verbatim} 
               1. push(15),    2. push(32), 
@@ -261,7 +258,7 @@ responsible for checking the white board for updates.
           %     Stack} for each circumstance in which an exception can be thrown.
 
           \item ({\bf 4 Points}) You can implement a {\tt Stack} using either an array or a linked list. Two exceptions
-            that may be thrown by the methods of these implementations may include the {\tt EmptyStackException} and
+            that may be thrown by the methods of these {\tt Stacks} may include the {\tt EmptyStackException} and
             the {\tt FullStackException}.  For an array-based and a linked list-based stack, what methods can throw
             these two exceptions?  Why do your selected methods throw these exceptions?
             
@@ -430,11 +427,11 @@ Note: Recompile with -Xlint:unchecked for details.
     \end{quote}
 
   \vspace*{-.25in}
-  Answer the following questions about this line of source code and the warning.
+  Answer the following questions about this line of source code and the warning:
 
   \begin{enumerate}
 
-    \item Why does the compiler produce this error?
+    \item Why does the compiler produce this warning?
       
     \item How would you revise the aforementioned line of code to remove this error?
 
