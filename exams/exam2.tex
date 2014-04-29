@@ -12,17 +12,17 @@
 \setcounter{tocdepth}{3}
 
 % define widow protection 
-        
+
 \def\widow#1{\vskip #1\vbadness10000\penalty-200\vskip-#1}
 
 % define a little section heading that doesn't go with any number
 
 \def\littlesection#1{
-\widow{2cm}
-\vskip 0.5cm
-\noindent{\bf #1}
-\vskip 0.1cm
-\noindent
+  \widow{2cm}
+  \vskip 0.5cm
+  \noindent{\bf #1}
+  \vskip 0.1cm
+  \noindent
 }
 
 % A paraphrase mode that makes it easy to see the stuff that shouldn't
@@ -30,13 +30,13 @@
 
 \newdimen\tmpdim
 \long\def\paraphrase#1{{\parskip=0pt\hfil\break
-\tmpdim=\hsize\advance\tmpdim by -15pt\noindent%
-\hbox to \hsize
-{\vrule\hskip 3pt\vrule\hfil\hbox to \tmpdim{\vbox{\hsize=\tmpdim
-\def\par{\leavevmode\endgraf}
-\obeyspaces \obeylines 
-\let\par=\endgraf
-\bf #1}}}}}
+    \tmpdim=\hsize\advance\tmpdim by -15pt\noindent%
+    \hbox to \hsize
+    {\vrule\hskip 3pt\vrule\hfil\hbox to \tmpdim{\vbox{\hsize=\tmpdim
+          \def\par{\leavevmode\endgraf}
+        \obeyspaces \obeylines 
+        \let\par=\endgraf
+      \bf #1}}}}}
 
 \renewcommand{\baselinestretch}{1.2}    % must go before the begin of doc
 
@@ -51,347 +51,399 @@
 
 \begin{center}
 
-CS 112: Introduction to Computer Science II \\
-Examination Two \\
-%Monday, November 20, 2006 \\
+  CS 112: Introduction to Computer Science II \\
+  Examination Two \\
+  %Monday, November 20, 2006 \\
 
 \end{center}
 
-\noindent
-Answer the five questions that are listed below.  You must provide
-answers to these questions on a separate sheet of paper.  Please
-develop responses that clearly express your ideas in the most succinct
-manner possible.  You are not permitted to complete this examination
-in conjunction with any of your classmates.  Furthermore, you cannot
-consult any outside references during this examination.  If you have
-questions concerning the problems that are listed below, please visit
-my office during the examination period.  If you leave the classroom
-to take the exam, you are responsible for checking the white board for
-status updates.
+\noindent Answer the five questions in this examination, recording your responses in the provided answer booklet.
+Please develop responses that clearly express your ideas in the most succinct manner possible.  You are not permitted to
+complete this examination in conjunction with any of your classmates.  Furthermore, you cannot consult any outside
+references during this examination.  If you have questions concerning the problems that are listed on these pages,
+please visit my office during the examination period.  If you leave the classroom to take the exam, you are responsible
+for checking the white board for updates.
 
 \begin{enumerate}
-  
-\item ({\bf 10 Points}) The {\tt Queue} is an abstract data type that
-  adheres to the ``first in, first out'' (FIFO) discipline.  Answer
-  the following questions about {\tt Queue}s.
+
+  \item ({\bf 10 Points}) The {\tt Queue} is an abstract data type that
+    adheres to the ``first in, first out'' (FIFO) discipline.  Answer
+    the following questions about {\tt Queue}s.
+
+    \begin{enumerate}
+        %%     \item ({\bf 2 Points}) Suppose that $N$ denotes the size of the
+        %%       array that is used to implement a {\tt Queue}.  Furthermore,
+        %%       assume that $f$ represents the {\tt int} pointer to the front of
+        %%       the {\tt Queue} and $r$ is the {\tt int} pointer to the rear of
+        %%       the {\tt Queue}.  What is the equation to calculate the size of
+        %%       the {\tt Queue} that uses a circular array?  Your response
+        %%       should include the general equation, example values for the
+        %%       three variables, and a demonstration of how to calculate the {\tt
+        %%       Queue} size for these variables.
+
+        %%     \item ({\bf 6 Points}) It is possible to implement a {\tt Queue}
+        %%       that contains an array that is accessed in a circular fashion.
+        %%       In your response this question, you may assume that an instance
+        %%       of {\tt ArrayQueue} contains an internal array {\tt storage[]}
+        %%       of size three.  For each of the following {\tt Queue}
+        %%       operations, show the state of {\tt storage[]} and the values for
+        %%       {\tt f}, the ``front'' pointer, and {\tt r}, the ``rear''
+        %%       pointer.
+
+        %%     \begin{verbatim}
+        %%        1. enqueue(100), 2. dequeue(), 
+        %%        3. enqueue(200), 4. dequeue(), 
+        %%        5. enqueue(300), 6. dequeue()
+        %%     \end{verbatim}
+
+        %% \item ({\bf 2 Points}) It is possible to implement the {\tt Queue}
+        %%   data structure with a circular array.  If {\tt dequeue} updates
+        %%   the $f$ pointer and {\tt enqueue} changes the $r$ pointer, then
+        %%   what assignment statements do these operations use to modify
+        %%   their pointers?
+
+      \item ({\bf 5 Points}) Furnish an implementation of a complete
+        Java program that accepts an arbitrary number of command-line
+        arguments and then places the arguments into a {\tt Queue}.
+        Assuming that the {\tt enqueue} of a single argument is the
+        basic operation, what is the worst-case time complexity of this
+        method?  Your response to this question should include a
+        justification for your chosen time complexity.
+
+      \item ({\bf 5 Points}) Draw a table that has three columns.  Label the first column ``Operation'', the second
+        column ``Output'', and the third column ``front $\leftarrow Q \leftarrow$ rear''.  Populate the second and third
+        columns with the output and {\tt Queue} state, respectively, that are created by the following sequence of
+        operations, executed in numerically increasing order.  Please place one operation on each row of the table.
+
+            \begin{verbatim} 
+              1. enqueue(55), 2. enqueue(13), 
+              3. dequeue(),   4. enqueue(79),
+              5. dequeue(),   6. front(), 
+              7. dequeue(),   8. dequeue() 
+            \end{verbatim}
+
+        \end{enumerate}
+
+        \newpage
+
+        %% The extendable array data structure uses an underlying array that can
+        %% grow when its space is exhausted.
+
+      \item ({\bf 10 Points}) The linked list is a data structure that
+        enables other structures to grow in a dynamic fashion.  However, it
+        is also possible to implement a {\tt Stack} and a {\tt Queue} with
+        an array.  Answer the following questions about the trade-offs
+        associated with using linked lists and arrays to implement data
+        structures like the {\tt Stack} and the {\tt Queue}.
+
+        \begin{enumerate}
+
+            %%   \item ({\bf 5 Points}) Clearly explain what happens when an
+            %%     extendable array is full and then the {\em add(i,e)} method is
+            %%     invoked. You should discuss the four steps that must be taken in
+            %%     order to properly handle this type of situation.  Your response
+            %%     must also explain how the garbage collector (GC) within the Java
+            %%     virtual machine (JVM) is used during memory management.
+
+            %%   \item ({\bf 6 Points}) Identify the similarities and differences
+            %%     between the {\tt java.util.Vector} and the {\tt
+            %%       java.util.ArrayList}.  Your response should explain similarities
+            %%     and differences related to both the performance and the
+            %%     functionality of these implementations of the extendable array
+            %%     abstract data type (ADT).
+
+          \item ({\bf 4 Points}) Clearly explain the structure of the {\tt Node} and the {\tt DNode}.  Your response
+            should indicate which of these types is used for the singly linked list and which is used for the doubly
+            linked list.  Finally, your answer should include a separate graphical depiction of the {\tt Node} and the
+            {\tt DNode}.
+
+            %%   \item ({\bf 2 Points}) Two important data structures include the
+            %%     linked list (LL) and the doubly linked list (DLL).  Please furnish
+            %%     a clearly labelled diagram that explains the structure of the node
+            %%     that makes up an LL and a DLL.
+
+          \item ({\bf 4 Points}) It is possible to implement a stack with either a linked list or a fixed-size array.
+            What are the trade-offs associated with the array-based and linked list-based approaches to implementing a
+            stack?  In your response to this question, you may use the abbreviation ``AS'' to refer to the array-based
+            stack and ``LLS'' to stand for the stack that uses a linked list as its storage mechanism.
+
+          \item ({\bf 2 Points}) Suppose that you have a properly implemented array-based queue and linked list-based
+            queue.  What is the worst-case time complexity of the {\tt dequeue} method for both of these queue
+            implementations?  Your response to this question should include a clear justification for your chosen
+            time complexities.
+
+            %%   \item ({\bf 4 Points}) Sketch the implementation of either the {\em
+            %%     add(i,e)} or {\em remove(i)} method that is part of a simple
+            %%     array-based implementation of an extendable array.  Your sketch
+            %%     should clearly explain how to perform the shifting of array
+            %%     elements.  The parameter $i$ denotes the index subject to addition
+            %%     or removal and the parameter $e$ represents the data element that
+            %%     must be added.
+
+            %%   \item ({\bf 2 Points}) Suppose that we were interested in storing an
+            %%     instance of an extendable array on the file system.  Explain how
+            %%     we could use a Java serialization primitive to perform this
+            %%     operation.  What is the difference between the XStream serialization
+            %%     primitive and the traditional Java serialization primitive?
+
+        \end{enumerate}
+
+        \newpage
+
+      \item ({\bf 10 Points}) The {\tt Stack} is an abstract data type (ADT)
+        that adheres to the ``last in first out'' (LIFO) discipline.  Answer
+        the following questions about the {\tt Stack} ADT.
+
+        \begin{enumerate}
+
+          \item ({\bf 5 Points}) Provide a Java-based pseudo-code implementation (or, just plain pseudo-code
+            implementation) of the {\tt push} and {\tt pop} methods for a simple array-based implementation of the {\tt
+            Stack}.  You can assume that the {\tt Stack} is implemented with a fixed-size array called {\tt S} and the
+            top of the stack pointer is stored in an {\tt int} variable called {\tt t}. Are these methods efficient?
+            Why?
+
+          \item ({\bf 5 Points}) The {\tt Stack} abstract data type provides the methods such as {\tt isEmpty}, {\tt
+            top}, {\tt push}, and {\tt pop}.  What is the worst-case time complexity for each of these methods?  Why did
+            you pick these complexities? If we assume that an $n$ element array called {\tt S} is used to store the
+            elements in the {\tt Stack}, what is the worst-case space complexity of the array-based {\tt Stack}
+            implementation? Why?
+
+            %% \item ({\bf 2 Points}) Using one or more diagrams and a textual
+            %%   explanation, please demonstrate how to use a {\tt Stack} to
+            %%   implement the ``simplified back button'' functionality as found in
+            %%   a Web browser such as Lynx.
+
+        \end{enumerate}
+
+        \newpage
+
+      \item ({\bf 10 Points}) Goodrich and Tamassia claim that the {\tt
+          Stack} ADT is the ``simplest of all data structures.''  Answer the
+        following questions about the {\tt Stack}.
+
+        \begin{enumerate}
+
+          \item ({\bf 5 Points}) Draw a table that has three columns.  Label the first column ``Operation'', the second
+            column ``Output'', and the third column ``Stack Contents''.  Populate the second and third columns with the
+            output and {\tt Stack} state, respectively, that are created by running the following sequence of
+            operations.  You can place one operation on a single row; make sure that you clearly indicate where the top
+            of the stack is in your column that describes the state of the {\tt Stack}.
+
+            \begin{verbatim} 
+              1. push(15),    2. push(32), 
+              3. pop(),       4. push(79),
+              5. pop(),       6. top(), 
+              7. pop(),       8. pop() 
+            \end{verbatim}
+
+            \vspace*{-.3in}
+
+          \item ({\bf 2 Points}) The Java virtual machine (JVM) uses both a stack and a heap.  Please clearly explain
+            how the JVM uses these data structures to support the correct execution of a Java program; your response
+            should include a diagram.
+
+            %% \item ({\bf 2 Points}) The time complexity of the {\tt LinkedList}'s
+            %%   {\em get(i)} method is given as $O(min(i+1, n-i))$.  Clearly explain
+            %%   the meaning of this time complexity.  Your response to this question
+            %%   should state the meaning of the variables $i$ and $n$.  Finally,
+            %%   please identify the worst-case input parameter for the {\em get}
+            %%   method.  Your response should include a graphical depiction of an
+            %%   instance of the {\tt LinkedList} class.
+
+          % \item ({\bf 4 Points}) Explain which methods of the array-based {\tt
+          %     Stack} abstract data type can throw the {\tt EmptyStackException}
+          %   and the {\tt FullStackException}.  Your response to this question
+          %   should discuss why your selected methods can throw these exceptions.
+          %   Your answer should also include a graphical depiction of a {\tt
+          %     Stack} for each circumstance in which an exception can be thrown.
+
+          \item ({\bf 3 Points}) You can implement a {\tt Stack} using either an array or a linked list. Two exceptions
+            that may be thrown by the methods of these {\tt Stacks} may include the {\tt EmptyStackException} and
+            the {\tt FullStackException}.  For an array-based and a linked list-based stack, what methods can throw
+            these two exceptions?  Why do your selected methods throw these exceptions?
+            
+            % throw these exceptions.  Your answer should also include a graphical depiction of a {\tt Stack} for each
+            % circumstance in which an exception can be thrown.
+
+        \end{enumerate}
+
+        \newpage
+
+      % \item ({\bf 10 Points}) The {\tt Queue} is important abstract data
+      %   types (ADT) that is used in many real-world software applications
+      %   like operating systems.  Answer the following questions about the
+      %   design, implementation, and evaluation of this abstract data type.
+
+        % \begin{enumerate}
+
+            %%   \item ({\bf 2 Points}) Clearly explain the structure of the {\tt
+            %%     Node} and the {\tt DNode}.  Your response should indicate which of
+            %%     these types is used for the singly linked list and which is used
+            %%     for the doubly linked list.  Finally, your answer should include a
+            %%     simple graphical depiction of the {\tt Node} and the {\tt DNode}.
+
+            %% \item ({\bf 4 Points}) Completely describe the operation of the {\tt
+            %% addFirst}, {\tt addLast}, {\tt removeFirst}, and {\tt removeLast}
+            %% operations for a {\tt DoubleEndedQueue} that is implemented with a 
+            %% doubly linked list.  Your response should explain when (and if!) any 
+            %% of these methods could throw an exception.
+
+            %%   \item ({\bf 2 Points}) The {\tt java.util.Vector} has a constructor
+            %%     that accepts two parameters in the following manner: {\tt
+            %%       Vector(int initialCapacity, int capacityIncrement)}.  Explain
+            %%     the purpose of each parameter and discuss how it will impact the
+            %%     performance of the {\tt Vector} abstract data type.
+
+            %% \item ({\bf 3 Points}) What is a {\tt java.util.Iterator}?  Write a
+            %%   short code segment to demonstrate the use of an {\tt Iterator}.
+            %%   Your response should explain how an {\tt Iterator} is extracted from
+            %%   a {\tt java.util.ArrayList} and fully describe the methods furnished
+            %%   by an instance of {\tt Iterator}.  As part of your response to this
+            %%   question, you can assume that an {\tt ArrayList} called {\tt
+            %%     number\_list} has already been populated with subclasses of {\tt
+            %%     java.lang.Number}.
+
+            %%   \item ({\bf 4 Points}) Many programming languages, such as Java,
+            %%     provide data structures such as arrays and the {\tt ArrayList}.
+            %%     In your response to this question, please explain the similarities
+            %%     and differences between an array and an {\tt ArrayList}.  Whenever
+            %%     possible, your answer should include a properly labeled diagram to
+            %%     illustrate each of your key points.
+
+            %% \item ({\bf 6 Points}) It is possible to implement a {\tt Queue}
+            %%   abstract data type with a {\em singly} {\tt LinkedList}.  Please
+            %%   furnish two diagrams that separately describe an {\em efficient}
+            %%   and {\em inefficient} implementation of a {\tt Queue} with a {\tt
+            %%     LinkedList}.  Your diagrams should clearly mark the front and
+            %%   rear of the {\tt Queue} and the positioning of the {\tt
+            %%     LinkedList} inside of the {\tt Queue}.  Finally, you must
+            %%   comment on why each of the implementations is either efficient or
+            %%   inefficient.
+
+            %% \item ({\bf 2 Points}) What is a compression algorithm and when
+            %%   would you use it?  Next, suppose that you decided to input a
+            %%   populated instance of the {\tt ArrayBlockingQueue} class into a
+            %%   compression technique.  If $L_B$ is the size of the {\tt
+            %%     ArrayBlockingQueue} {\em before} compression and $L_A$ is the
+            %%   size {\em after} compression, then how would you calculate the
+            %%   {\em percent reduction} (PR) of the {\tt ArrayBlockingQueue}?
+            %%   Your response to the second part of this question should include
+            %%   an equation that the defines the percent reduction.  What does it
+            %%   mean if PR is positive or negative?
+
+ %       \item ({\bf 2 Points}) A complete implementation of an {\tt
+    %           ArrayQueue} requires the creation and use of the following
+    %         interface:
+
+    %         \vspace*{-.1in}
+
+    %         \begin{verbatim}
+    %           public interface Queue<E> 
+    %         \end{verbatim}
+
+    %         \vspace*{-.3in}
+
+    %         \noindent
+    %         Answer the following questions about this {\tt interface}
+    %         declaration:
+
+    %         \begin{enumerate}
+
+    %           \item What is the meaning of the term {\tt interface}?
+
+    %           \item What is the meaning of the notation {\tt Queue<E>}?
+
+    %         \end{enumerate}
+
+    %       \item ({\bf 4 Points}) Suppose that you are implementing a {\tt Queue}
+    %         with an array called {\tt Q}.  In this implementation, {\tt Q[0]}
+    %         always denotes the front of the {\tt Queue} and the structure is
+    %         allowed to grow from there.  Is this an efficient design? Why or why
+    %         not?
+
+    %       \item ({\bf 4 Points}) The double-ended queue, or deque, is a separate
+    %         data structure from the queue.  What are the similarities and
+    %         differences between the deque and the queue?  Your response to this
+    %         question should include details about the names and behavior of the
+    %         methods that these structures provide.
+
+    %         %% \item ({\bf 2 Points}) The worst-case time complexity of the {\em
+    %         %%   add(i,e)} method is given as $O(n-i+1)$ where there are $n$ elements
+    %         %%   currently stored in an array of size $N$.  Clearly explain the
+    %         %%   meaning of this time complexity and identify the worst-case values
+    %         %%   for the input parameters.
+
+    %     \end{enumerate}
+
+ \item ({\bf 10 Points}) The extendable array data structure uses an
+  underlying array that can ``grow'' when its space is exhausted.
+  Answer these questions about this data type.
 
   \begin{enumerate}
+
+  \item ({\bf 4 Points}) Clearly explain what happens when an
+    extendable array is full and then the {\tt add(i,e)} method is
+    invoked. Using one or more diagrams, you should discuss the four
+    steps that must be taken in order to properly handle this type of
+    situation.  Your response must also explain how the garbage
+    collector (GC) within the Java virtual machine (JVM) is used
+    during memory management.
+
+  %% \item ({\bf 3 Points}) Identify the similarities and differences
+  %%   between the {\tt java.util.Vector} and the {\tt
+  %%     java.util.ArrayList}.  Your response should explain similarities
+  %%   and differences related to both the performance and the
+  %%   functionality of these implementations of the extendable array
+  %%   ADT.
+
+  \item ({\bf 4 Points}) What are the similarities and differences
+    between an array and the {\tt java.util.ArrayList}?  Your answer
+    must identify similarities and differences in both the performance
+    and the functionality of these data structures.
+
+%%   \item ({\bf 5 Points}) Suppose that an {\tt ArrayList} called {\tt
+%%     numberList} contained data values that we wanted to store on the
+%%     file system.  What source code would you write to serialize and
+%%     deserialize {\tt numberList} using either XStream or binary
+%%     serialization with Java?  Your response to this question should
+%%     include a diagram that explains the full process of serialization
+%%     and deserialization.  Finally, you may assume that {\tt
+%%       numberList} only contains instances of {\tt java.lang.Integer}.
+
+  %% \item ({\bf 2 Points}) What is a {\tt java.util.Iterator}?  Your
+  %%   answer should clearly discuss the steps that must be taken to
+  %%   create and then use an instance of the {\tt Iterator} class.  Why
+  %%   might a Java programmer who wants to print out each element in an
+  %%   {\tt ArrayList} use an {\tt Iterator} instead of a {\tt for} loop?
+
+  \item ({\bf 2 Points}) Declaring an {\tt ArrayList} with the statement ``{\tt ArrayList list = new
+      ArrayList();}'' will cause the Java compiler to produce this warning:
     
-%%     \item ({\bf 2 Points}) Suppose that $N$ denotes the size of the
-%%       array that is used to implement a {\tt Queue}.  Furthermore,
-%%       assume that $f$ represents the {\tt int} pointer to the front of
-%%       the {\tt Queue} and $r$ is the {\tt int} pointer to the rear of
-%%       the {\tt Queue}.  What is the equation to calculate the size of
-%%       the {\tt Queue} that uses a circular array?  Your response
-%%       should include the general equation, example values for the
-%%       three variables, and a demonstration of how to calculate the {\tt
-%%       Queue} size for these variables.
-
-%%     \item ({\bf 6 Points}) It is possible to implement a {\tt Queue}
-%%       that contains an array that is accessed in a circular fashion.
-%%       In your response this question, you may assume that an instance
-%%       of {\tt ArrayQueue} contains an internal array {\tt storage[]}
-%%       of size three.  For each of the following {\tt Queue}
-%%       operations, show the state of {\tt storage[]} and the values for
-%%       {\tt f}, the ``front'' pointer, and {\tt r}, the ``rear''
-%%       pointer.
-
-%%     \begin{verbatim}
-%%        1. enqueue(100), 2. dequeue(), 
-%%        3. enqueue(200), 4. dequeue(), 
-%%        5. enqueue(300), 6. dequeue()
-%%     \end{verbatim}
-
-    %% \item ({\bf 2 Points}) It is possible to implement the {\tt Queue}
-    %%   data structure with a circular array.  If {\tt dequeue} updates
-    %%   the $f$ pointer and {\tt enqueue} changes the $r$ pointer, then
-    %%   what assignment statements do these operations use to modify
-    %%   their pointers?
-
-    \item ({\bf 5 Points}) Furnish an implementation of a complete
-      Java program that accepts an arbitrary number of command-line
-      arguments and then places the arguments into a {\tt Queue}.
-      Assuming that the {\tt enqueue} of a single argument is the
-      basic operation, what is the worst-case time complexity of this
-      method?  Your response to this question should include a
-      justification for your chosen time complexity.
-
-    \item ({\bf 5 Points}) Draw a table that has three columns.  Label
-      the first column ``Operation'', the second column ``Output'',
-      and the third column ``front $\leftarrow Q \leftarrow$ rear''.
-      Populate the second and third columns with the output and {\tt
-        Queue} state, respectively, that are created by the following
-      sequence of operations.  You can place one operation on a single
-      row of the table.
-
-      \begin{verbatim} 
-	1. enqueue(55), 2. enqueue(13), 
-	3. dequeue(),   4. enqueue(79),
-	5. dequeue(),   6. front(), 
-	7. dequeue(),   8. dequeue() 
+    \begin{quote}
+      \begin{verbatim}
+Note: CreateArrayLists.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
       \end{verbatim}
+    \end{quote}
+
+  \vspace*{-.25in}
+  Answer the following questions about this line of source code and the warning:
+
+  \begin{enumerate}
+
+    \item Why does the Java compiler produce this warning?
+      
+    \item How would you revise the aforementioned line of code to remove this error?
+
+  \end{enumerate}
+
+  \end{enumerate}
+
+ 
 
     \end{enumerate}
-      
-\newpage
 
-%% The extendable array data structure uses an underlying array that can
-%% grow when its space is exhausted.
-
-\item ({\bf 10 Points}) The linked list is a data structure that
-  enables other structures to grow in a dynamic fashion.  However, it
-  is also possible to implement a {\tt Stack} and a {\tt Queue} with
-  an array.  Answer the following questions about the trade-offs
-  associated with using linked lists and arrays to implement data
-  structures.
-
-  \begin{enumerate}
-
-%%   \item ({\bf 5 Points}) Clearly explain what happens when an
-%%     extendable array is full and then the {\em add(i,e)} method is
-%%     invoked. You should discuss the four steps that must be taken in
-%%     order to properly handle this type of situation.  Your response
-%%     must also explain how the garbage collector (GC) within the Java
-%%     virtual machine (JVM) is used during memory management.
-
-%%   \item ({\bf 6 Points}) Identify the similarities and differences
-%%     between the {\tt java.util.Vector} and the {\tt
-%%       java.util.ArrayList}.  Your response should explain similarities
-%%     and differences related to both the performance and the
-%%     functionality of these implementations of the extendable array
-%%     abstract data type (ADT).
-
-  \item ({\bf 2 Points}) Clearly explain the structure of the {\tt
-    Node} and the {\tt DNode}.  Your response should indicate which of
-    these types is used for the singly linked list and which is used
-    for the doubly linked list.  Finally, your answer should include a
-    simple graphical depiction of the {\tt Node} and the {\tt DNode}.
-
-%%   \item ({\bf 2 Points}) Two important data structures include the
-%%     linked list (LL) and the doubly linked list (DLL).  Please furnish
-%%     a clearly labelled diagram that explains the structure of the node
-%%     that makes up an LL and a DLL.
-
-  \item ({\bf 4 Points}) It is possible to implement a stack with
-    either a linked list or a fixed size array.  What are the
-    trade-offs associated with the array-based and linked list-based
-    approaches to implementing a stack?  In your response to this
-    question, you may use the abbreviation ``AS'' to refer to the
-    array-based stack and ``LLS'' to stand for the stack that uses a
-    linked list as its storage mechanism.
-
-  \item ({\bf 4 Points}) Suppose that you have a properly implemented
-    array-based queue and linked list-based queue.  What is the
-    worst-case time complexity of the {\tt enqueue} and {\tt dequeue}
-    methods for both of these queue implementations?  Your response to
-    this question should include a clear justification for your chosen
-    complexities.
-
-%%   \item ({\bf 4 Points}) Sketch the implementation of either the {\em
-%%     add(i,e)} or {\em remove(i)} method that is part of a simple
-%%     array-based implementation of an extendable array.  Your sketch
-%%     should clearly explain how to perform the shifting of array
-%%     elements.  The parameter $i$ denotes the index subject to addition
-%%     or removal and the parameter $e$ represents the data element that
-%%     must be added.
-
-%%   \item ({\bf 2 Points}) Suppose that we were interested in storing an
-%%     instance of an extendable array on the file system.  Explain how
-%%     we could use a Java serialization primitive to perform this
-%%     operation.  What is the difference between the XStream serialization
-%%     primitive and the traditional Java serialization primitive?
-
-  \end{enumerate}
-
-\newpage
-
-\item ({\bf 10 Points}) The {\tt Stack} is an abstract data type (ADT)
-  that adheres to the ``last in first out'' (LIFO) discipline.  Answer
-  the following questions about the {\tt Stack} ADT.
-
-  \begin{enumerate}
-
-  \item ({\bf 5 Points}) Provide a Java-based pseudo-code
-    implementation (or, just plain pseudo-code implementation) of the
-    {\tt push} and {\tt pop} methods for a simple array-based
-    implementation of the {\tt Stack}.  You can assume that the {\tt
-      Stack} is implemented with a fixed size array called {\tt S} and
-    the top of the stack pointer is stored in an {\tt int} variable
-    called {\tt t}.
-
-  \item ({\bf 5 Points}) The {\tt Stack} abstract data type provides
-    the methods such as {\tt isEmpty}, {\tt top}, {\tt push}, and {\tt
-      pop}.  What is the worst-case time complexity for each of these
-    methods?  Why did you pick these complexities? If we assume that
-    an $N$ element array called {\tt S} is used to store the elements
-    in the {\tt Stack}, what is the worst-case space complexity of the
-    array-based {\tt Stack} implementation? Why?
-
-  %% \item ({\bf 2 Points}) Using one or more diagrams and a textual
-  %%   explanation, please demonstrate how to use a {\tt Stack} to
-  %%   implement the ``simplified back button'' functionality as found in
-  %%   a Web browser such as Lynx.
-
-  \end{enumerate}
-
-\newpage
-
-\item ({\bf 10 Points}) Goodrich and Tamassia claim that the {\tt
-  Stack} ADT is the ``simplest of all data structures.''  Answer the
-  following questions about the {\tt Stack}.
-
-\begin{enumerate}
-
-\item ({\bf 4 Points}) Draw a table that has three columns.  Label the
-  first column ``Operation'', the second column ``Output'', and the
-  third column ``Stack Contents''.  Populate the second and third
-  columns with the output and {\tt Stack} state, respectively, that
-  are created by the following sequence of operations.  You can place
-  one operation on a single row.  Make sure that you clearly indicate
-  where the top of the stack is in your column that describes the
-  state of the {\tt Stack}.
-
-  \begin{verbatim} 
-    1. push(15),    2. push(32), 
-    3. pop(),       4. push(79),
-    5. pop(),       6. top(), 
-    7. pop(),       8. pop() 
-  \end{verbatim}
-
-  \vspace*{-.3in}
-
-\item ({\bf 2 Points}) The Java virtual machine (JVM) uses both a
-  stack and a heap.  Please clearly explain how the JVM uses these
-  data structures to support the correct execution of a Java program.
-
-%% \item ({\bf 2 Points}) The time complexity of the {\tt LinkedList}'s
-%%   {\em get(i)} method is given as $O(min(i+1, n-i))$.  Clearly explain
-%%   the meaning of this time complexity.  Your response to this question
-%%   should state the meaning of the variables $i$ and $n$.  Finally,
-%%   please identify the worst-case input parameter for the {\em get}
-%%   method.  Your response should include a graphical depiction of an
-%%   instance of the {\tt LinkedList} class.
-
-\item ({\bf 4 Points}) Explain which methods of the array-based {\tt
-  Stack} abstract data type can throw the {\tt EmptyStackException}
-  and the {\tt FullStackException}.  Your response to this question
-  should discuss why your selected methods can throw these exceptions.
-  Your answer should also include a graphical depiction of a {\tt
-    Stack} for each circumstance in which an exception can be thrown.
-
-\end{enumerate}
-
-\newpage
-
-\item ({\bf 10 Points}) The {\tt Queue} is important abstract data
-  types (ADT) that is used in many real-world software applications
-  like operating systems.  Answer the following questions about the
-  design, implementation, and evaluation of this abstract data type.
-
-\begin{enumerate}
-
-%%   \item ({\bf 2 Points}) Clearly explain the structure of the {\tt
-%%     Node} and the {\tt DNode}.  Your response should indicate which of
-%%     these types is used for the singly linked list and which is used
-%%     for the doubly linked list.  Finally, your answer should include a
-%%     simple graphical depiction of the {\tt Node} and the {\tt DNode}.
-
-%% \item ({\bf 4 Points}) Completely describe the operation of the {\tt
-%% addFirst}, {\tt addLast}, {\tt removeFirst}, and {\tt removeLast}
-%% operations for a {\tt DoubleEndedQueue} that is implemented with a 
-%% doubly linked list.  Your response should explain when (and if!) any 
-%% of these methods could throw an exception.
-
-%%   \item ({\bf 2 Points}) The {\tt java.util.Vector} has a constructor
-%%     that accepts two parameters in the following manner: {\tt
-%%       Vector(int initialCapacity, int capacityIncrement)}.  Explain
-%%     the purpose of each parameter and discuss how it will impact the
-%%     performance of the {\tt Vector} abstract data type.
-
-%% \item ({\bf 3 Points}) What is a {\tt java.util.Iterator}?  Write a
-%%   short code segment to demonstrate the use of an {\tt Iterator}.
-%%   Your response should explain how an {\tt Iterator} is extracted from
-%%   a {\tt java.util.ArrayList} and fully describe the methods furnished
-%%   by an instance of {\tt Iterator}.  As part of your response to this
-%%   question, you can assume that an {\tt ArrayList} called {\tt
-%%     number\_list} has already been populated with subclasses of {\tt
-%%     java.lang.Number}.
-
-%%   \item ({\bf 4 Points}) Many programming languages, such as Java,
-%%     provide data structures such as arrays and the {\tt ArrayList}.
-%%     In your response to this question, please explain the similarities
-%%     and differences between an array and an {\tt ArrayList}.  Whenever
-%%     possible, your answer should include a properly labeled diagram to
-%%     illustrate each of your key points.
-
-  %% \item ({\bf 6 Points}) It is possible to implement a {\tt Queue}
-  %%   abstract data type with a {\em singly} {\tt LinkedList}.  Please
-  %%   furnish two diagrams that separately describe an {\em efficient}
-  %%   and {\em inefficient} implementation of a {\tt Queue} with a {\tt
-  %%     LinkedList}.  Your diagrams should clearly mark the front and
-  %%   rear of the {\tt Queue} and the positioning of the {\tt
-  %%     LinkedList} inside of the {\tt Queue}.  Finally, you must
-  %%   comment on why each of the implementations is either efficient or
-  %%   inefficient.
-
-  %% \item ({\bf 2 Points}) What is a compression algorithm and when
-  %%   would you use it?  Next, suppose that you decided to input a
-  %%   populated instance of the {\tt ArrayBlockingQueue} class into a
-  %%   compression technique.  If $L_B$ is the size of the {\tt
-  %%     ArrayBlockingQueue} {\em before} compression and $L_A$ is the
-  %%   size {\em after} compression, then how would you calculate the
-  %%   {\em percent reduction} (PR) of the {\tt ArrayBlockingQueue}?
-  %%   Your response to the second part of this question should include
-  %%   an equation that the defines the percent reduction.  What does it
-  %%   mean if PR is positive or negative?
-
-\item ({\bf 2 Points}) A complete implementation of an {\tt
-  ArrayQueue} requires the creation and use of the following
-  interface:
-  
-  \vspace*{-.1in}
-
-  \begin{verbatim}
-     public interface Queue<E> 
-  \end{verbatim}
-
-  \vspace*{-.3in}
-
-  \noindent
-  Answer the following questions about this {\tt interface}
-  declaration:
-
-  \begin{enumerate}
-
-    \item What is the meaning of the term {\tt interface}?
-
-    \item What is the meaning of the notation {\tt Queue<E>}?
-    
-  \end{enumerate}
-
-\item ({\bf 4 Points}) Suppose that you are implementing a {\tt Queue}
-  with an array called {\tt Q}.  In this implementation, {\tt Q[0]}
-  always denotes the front of the {\tt Queue} and the structure is
-  allowed to grow from there.  Is this an efficient design? Why or why
-  not?
-
-\item ({\bf 4 Points}) The double-ended queue, or deque, is a separate
-  data structure from the queue.  What are the similarities and
-  differences between the deque and the queue?  Your response to this
-  question should include details about the names and behavior of the
-  methods that these structures provide.
-
-%% \item ({\bf 2 Points}) The worst-case time complexity of the {\em
-%%   add(i,e)} method is given as $O(n-i+1)$ where there are $n$ elements
-%%   currently stored in an array of size $N$.  Clearly explain the
-%%   meaning of this time complexity and identify the worst-case values
-%%   for the input parameters.
-
-\end{enumerate}
-
-\end{enumerate}
-
-\end{document}
+  \end{document}
 
 
 
