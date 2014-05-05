@@ -98,7 +98,7 @@ status updates.
 
 \item ({\bf 2 Points}) The Java language requires programmers to set the {\tt CLASSPATH} environment variable.  Please
   provide an example of the command that you would type in the terminal window to set the {\tt CLASSPATH}; your example
-  should demonstrate the inclusion of both directories and JAR files.
+  should demonstrate the inclusion of both directories and JAR files in the {\tt CLASSPATH}.
 
 
 \item \label{encaps_example} ({\bf 2 Points}) Both of the code
@@ -345,7 +345,7 @@ public static int factorial(int n)
 
 \item ({\bf 5 Points}) A Java virtual machine (JVM) is a complex software artifact.  Using both natural language
   sentences and a diagram with labels, describe the components within a JVM.  Your response should explain how these
-  different components execute a Java program.  Please make sure that you clearly explain how the JVM handles the
+  different components execute a Java program.  Please make sure that you clearly discuss how the JVM handles the
   execution of programs that make recursive method calls.
 
 %% \item ({\bf 2 Points}) The Java programming language directly supports
@@ -525,16 +525,17 @@ public static int factorial(int n)
 \begin{enumerate}
 
   \item ({\bf 4 Points}) Clearly explain the structure of the {\tt Node} and the {\tt DNode}.  Your response should
-    indicate which of these types is used for the singly linked list and which is used for the doubly linked list.
+    indicate which of these types is used for the singly-linked list and which is used for the doubly linked list.
     Finally, your answer should include a detailed graphical depiction of the {\tt Node} and the {\tt DNode}.
 
   \item ({\bf 4 Points}) What are the similarities and differences between a {\tt Queue} and a {\tt DoubleEndedQueue}?
     Your response to this question should state the key methods provided by each of these data structures and then
     comment on how these methods support different types of program behavior.
 
-  \item ({\bf 2 Points}) One way to implement a {\tt Queue} is to use an array.  What is the worst-case time complexity
-    of the {\tt enqueue} method of a correctly implemented {\tt ArrayQueue}? What is the worst-case space complexity of
-    the {\tt ArrayQueue}?
+  \item ({\bf 2 Points}) One way to implement a {\tt Queue} is to use an array.  Alternatively, you can implement a {\tt
+      Queue} using a {\tt LinkedList}. What is the worst-case space complexity of a {\tt Queue} built with an array?
+    What is the worst-case space complexity of a {\tt Queue} built with a {\tt LinkedList}? Please justify your
+    response to this question.
 
 %% \item ({\bf 4 Points}) Completely describe the operation of the {\tt
 %% addFirst}, {\tt addLast}, {\tt removeFirst}, and {\tt removeLast}
@@ -628,7 +629,7 @@ public static int factorial(int n)
   selected methods can throw these exceptions; please also include a graphical depiction of a {\tt Stack} for each
   circumstance in which an exception can be thrown.
 
-\item ({\bf 2 Points}) Suppose that an instance of {\tt java.util.LinkedList} contains a collection with several {\tt
+\item ({\bf 2 Points}) Suppose that an instance of {\tt java.util.LinkedList} contains a collection of several {\tt
     Integer} objects.  Using natural language, please describe an algorithm that can find the largest {\tt Integer}
   inside of the {\tt LinkedList}.  What is the worst-case time complexity of your implementation?  Your response should
   also furnish a diagram that helps to explain how the algorithm works.
@@ -668,33 +669,25 @@ public static int factorial(int n)
 %%     a clearly labelled diagram that explains the structure of the node
 %%     that makes up an LL and a DLL.
 
-  \item ({\bf 4 Points}) It is possible to implement a queue with
-    either a linked list or a fixed size array.  What are the
-    trade-offs associated with the array-based and linked list-based
-    approaches to implementing a queue?  In your response to this
-    question, you may use the abbreviation ``AQ'' to refer to the
-    array-based queue and ``LLQ'' to stand for the queue that uses a
-    linked list as its storage mechanism.
+  % \item ({\bf 4 Points}) It is possible to implement a queue with
+  %   either a linked list or a fixed size array.  What are the
+  %   trade-offs associated with the array-based and linked list-based
+  %   approaches to implementing a queue?  In your response to this
+  %   question, you may use the abbreviation ``AQ'' to refer to the
+  %   array-based queue and ``LLQ'' to stand for the queue that uses a
+  %   linked list as its storage mechanism.
 
-  \item ({\bf 2 Points}) Suppose that you have a properly implemented
-    array-based queue and linked list-based queue.  What is the
-    worst-case time complexity of the {\tt enqueue} method for both of
-    these queue implementations?  Your response to this question
-    should include a clear justification for your chosen complexity or
-    complexities.
+  \item ({\bf 4 Points}) Suppose that you have a properly implemented array-based queue and linked list-based queue.
+    What is the worst-case time complexity of the {\tt enqueue} method for both of these queue implementations?  Your
+    response to this question should include a clear justification for your chosen complexity or complexities.
 
-  \item ({\bf 2 Points}) The array-based implementation of an
-    extendable array performs shifting when a user executes the {\tt
-      add(i,e)} and {\tt remove(i)} methods.  Why do both of these
-    methods shift data values in the array?  In which direction do the
-    {\tt add} and {\tt remove} methods respectively shift the data
-    values?
+  \item ({\bf 2 Points}) The array-based implementation of an extendable array performs shifting when a user executes
+    the {\tt add(i,e)} and {\tt remove(i)} methods.  Why do both of these methods shift data values in the array?  In
+    which direction do the {\tt add} and {\tt remove} methods respectively shift the data values?
 
-  \item ({\bf 2 Points}) The {\tt main} method in Figure~\ref{Queue}'s
-    {\tt QueueDiscipline} class constructs an instance of the {\tt
-      java.util.concurrent.ArrayBlockingQueue} and then performs
-    several operations on this instance.  What is the output of the
-    {\tt main} method?
+  \item ({\bf 4 Points}) The {\tt main} method in Figure~\ref{Queue}'s {\tt QueueDiscipline} class constructs an
+    instance of the {\tt java.util.concurrent.ArrayBlockingQueue} and then performs several operations on this instance.
+    What is the output of the {\tt main} method?
 
 %% \item ({\bf 4 Points}) Sketch the implementation of either the {\em
 %%     add(i,e)} or {\em remove(i)} method that is part of a simple
