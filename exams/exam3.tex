@@ -441,33 +441,20 @@ public static int factorial(int n)
 %%     7. pop(),      8. pop() 
 %%   \end{verbatim}
 
-  \item ({\bf 3 Points}) Provide a Java-based pseudo-code
-    implementation (or, just plain pseudo-code implementation) of the
-    {\tt push} and {\tt pop} methods for a simple array-based
-    implementation of the {\tt Stack}.  You can assume that the {\tt
-      Stack} is implemented with an array called {\tt S} and the top
-    of the stack pointer is stored in an {\tt int} variable called
-    {\tt t}.  Your response to this question should clearly explain
-    the exceptions that are thrown by the methods.
+  \item ({\bf 3 Points}) Provide a Java-based pseudo-code implementation (or, just plain pseudo-code implementation) of
+    either the {\tt push} or {\tt pop} method for a simple array-based implementation of the {\tt Stack}.  You can assume
+    that the {\tt Stack} is implemented with an array called {\tt S} and the top of the stack pointer is stored in an
+    {\tt int} variable called {\tt t}.  Your response to this question should clearly explain the exceptions that are
+    thrown by the methods.
 
-  \item ({\bf 2 Points}) The {\tt Stack} abstract data type provides
-    the following methods: {\tt size}, {\tt isEmpty}, {\tt top}, {\tt
-      push}, and {\tt pop}.  What is the worst-case time complexity
-    for each of these methods?  If we assume that an $N$ element array
-    {\tt S} is used to store the elements in the {\tt Stack}, what is
-    the worst-case space usage of the array-based {\tt Stack}
-    implementation?  Please justify your chosen time and space
-    complexities.
+  \item ({\bf 2 Points}) The {\tt Stack} abstract data type provides methods such as {\tt isEmpty} and {\tt top}.  Using
+    the big-O notation, what is the worst-case time complexity for each of these methods?  Please justify your chosen
+    time complexities.
 
-    \item ({\bf 5 Points}) The {\tt Stack} ADT can be used to
-      determine whether or not an input {\tt String} of parentheses is
-      either matching (e.g., ``(())'') or non-matching (e.g.,
-      ``((()))))'').  Please clearly describe the {\tt
-        isMatching(String s)} algorithm that uses a {\tt Stack} to
-      return {\tt true} when {\tt s} is matching and {\tt false}
-      otherwise.  You can express your response to this question
-      through the use of either pseudo code or a program in the Java
-      programming language.
+    \item ({\bf 5 Points}) The {\tt Stack} abstract data type can be used to determine whether or not an input {\tt
+        String} of parentheses, or any other delimiting character, is either matching (e.g., ``(())'') or non-matching
+      (e.g., ``((()))))'').  Using pseudo-code or Java code, please implement the {\tt isMatching\-(String s)} algorithm
+      that uses a {\tt Stack} to return {\tt true} when {\tt s} is matching and {\tt false} otherwise.  
 
   \end{enumerate}
 
