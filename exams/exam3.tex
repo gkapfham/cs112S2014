@@ -623,31 +623,23 @@ public static int factorial(int n)
 %%   should include a graphical depiction of an instance of the {\tt
 %%     LinkedList} class.
 
-\item ({\bf 3 Points}) Explain which methods of the array-based {\tt
-  Stack} abstract data type can throw the {\tt EmptyStackException}
-  and the {\tt FullStackExeption}.  Your response to this question
-  should discuss why your selected methods can throw these exceptions.
-  Your response should include a graphical depiction of a {\tt Stack}
-  for each circumstance in which an exception can be thrown.
+\item ({\bf 3 Points}) Explain which methods of the array-based {\tt Stack} abstract data type can throw the {\tt
+    EmptyStackException} and the {\tt FullStackExeption}.  Your response to this question should discuss why your
+  selected methods can throw these exceptions; please also include a graphical depiction of a {\tt Stack} for each
+  circumstance in which an exception can be thrown.
 
-\item ({\bf 2 Points}) Suppose that an instance of {\tt
-  java.util.LinkedList} contains a collection with several {\tt
-  Integer} objects.  Using natural language, please describe an
-  algorithm that can find the largest {\tt Integer} inside of the {\tt
-    LinkedList}.  What is the worst-case time complexity of your
-  implementation?  Your response should also furnish a diagram that
-  explains how the algorithm works.
+\item ({\bf 2 Points}) Suppose that an instance of {\tt java.util.LinkedList} contains a collection with several {\tt
+    Integer} objects.  Using natural language, please describe an algorithm that can find the largest {\tt Integer}
+  inside of the {\tt LinkedList}.  What is the worst-case time complexity of your implementation?  Your response should
+  also furnish a diagram that helps to explain how the algorithm works.
 
 \end{enumerate}
 
 \newpage
 
-\item ({\bf 10 Points}) The extendable array data structure uses an
-  underlying array that can ``grow'' when its space is exhausted.
-  Another important data structure that often provides similar
-  functionality is the linked list.  Answer the following questions
-  about the trade-offs associated with using linked lists, arrays, and
-  extendable arrays.
+\item ({\bf 10 Points}) The extendable array data structure uses an underlying array that can ``grow'' when its space is
+  exhausted.  Another important data structure that often provides similar functionality is the linked list.  Answer the
+  following questions about the trade-offs associated with using linked lists, arrays, and extendable arrays.
 
   \begin{enumerate}
 
@@ -927,20 +919,20 @@ public class SortingExample
 \label{SortingExample}
 \end{figure}
 
-\newpage
-
-\begin{figure}[h]
-
-  \begin{center}
-  \includegraphics[totalheight=0.75\textheight]{filesystem-tree.pdf}
-  \end{center}
-
-  \vspace*{-.2in}
-
-  \caption{An Example of a Tree Data Structure.}
-  \label{tree}
-
-\end{figure}
+% \newpage
+% 
+% \begin{figure}[h]
+% 
+%   \begin{center}
+%   \includegraphics[totalheight=0.75\textheight]{filesystem-tree.pdf}
+%   \end{center}
+% 
+%   \vspace*{-.2in}
+% 
+%   \caption{An Example of a Tree Data Structure.}
+%   \label{tree}
+% 
+% \end{figure}
 
 \newpage
 
@@ -962,7 +954,7 @@ public class QueueDiscipline
         for(int i = 0; i < 10; i++)	    {
 
                 Integer value = new Integer(i);
-                queue.offer(value);
+                queue.offer(value); // run an "enqueue" method call
                 System.out.println(value);
 
         }
@@ -972,7 +964,7 @@ public class QueueDiscipline
         System.out.println(" Output phase ... " );
         while(queue.peek() != null) {
 
-                Integer value = (Integer)queue.remove();
+                Integer value = (Integer)queue.remove(); // run a "dequeue" method call
                 System.out.println(value);
 
         }
